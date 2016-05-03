@@ -12,6 +12,7 @@
 #import "LGZFriendTrendsViewController.h"
 #import "LGZMeViewController.h"
 #import "LGZTabBar.h"
+#import "LGZNavgationController.h"
 
 @interface LGZTabBarController ()
 
@@ -54,7 +55,7 @@
     
     //     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     // 为每个控制器包装一个navigation
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    LGZNavgationController *nav = [[LGZNavgationController alloc] initWithRootViewController:vc];
     
     [self addChildViewController:nav];
 }
