@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "LGZTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +26,7 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     // 设置窗口根控制器
-    self.window.rootViewController = [[ViewController alloc] init];
+    self.window.rootViewController = [[LGZTabBarController alloc] init];
     
     // 显示窗口
     [self.window makeKeyAndVisible];
