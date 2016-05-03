@@ -7,6 +7,10 @@
 //
 
 #import "LGZTabBarController.h"
+#import "LGZEssenceViewController.h"
+#import "LGZNewViewController.h"
+#import "LGZFriendTrendsViewController.h"
+#import "LGZMeViewController.h"
 
 @interface LGZTabBarController ()
 
@@ -26,46 +30,28 @@
     UITabBarItem *item = [UITabBarItem appearance];
     [item setTitleTextAttributes:dict forState:UIControlStateSelected];
 
-    UIViewController *vc01 = [[UIViewController alloc] init];
-    vc01.view.backgroundColor = [UIColor redColor];
-    vc01.tabBarItem.title = @"精华";
-    vc01.tabBarItem.image = [UIImage imageNamed:@"tabBar_essence_icon"];
-    vc01.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_essence_click_icon"];
+    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
+    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"最新" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
-//    [vc01.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
-    [self addChildViewController:vc01];
+    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+}
+
+
+// 设置tabBarItem属性
+- (void)setUpChild:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
+{
+    vc.view.backgroundColor = [UIColor grayColor];
+    vc.tabBarItem.title = title;
+    vc.tabBarItem.image = [UIImage imageNamed:image];
+    vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
+    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1];
     
-    UIViewController *vc02 = [[UIViewController alloc] init];
-    vc02.view.backgroundColor = [UIColor blueColor];
-    vc02.tabBarItem.title = @"最新";
-    vc02.tabBarItem.image = [UIImage imageNamed:@"tabBar_new_icon"];
-    vc02.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_new_click_icon"];
+    //     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     
-//    [vc02.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
-    
-    [self addChildViewController:vc02];
-    
-    UIViewController *vc03 = [[UIViewController alloc] init];
-    vc03.view.backgroundColor = [UIColor greenColor];
-    vc03.tabBarItem.title = @"关注";
-    vc03.tabBarItem.image = [UIImage imageNamed:@"tabBar_friendTrends_icon"];
-    vc03.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
-    
-//     [vc03.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
-    
-    [self addChildViewController:vc03];
-    
-    UIViewController *vc04 = [[UIViewController alloc] init];
-    vc04.view.backgroundColor = [UIColor grayColor];
-    vc04.tabBarItem.title = @"我的";
-    vc04.tabBarItem.image = [UIImage imageNamed:@"tabBar_me_icon"];
-    vc04.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_me_click_icon"];
-    
-//     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
-    
-    [self addChildViewController:vc04];
+    [self addChildViewController:vc];
 }
 
 /*

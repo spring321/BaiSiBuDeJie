@@ -13,6 +13,10 @@
 		189FD5051CD883810022DFA9 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5041CD883810022DFA9 /* _____Tests.m */; };
 		189FD5101CD883810022DFA9 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD50F1CD883810022DFA9 /* _____UITests.m */; };
 		189FD51F1CD890FA0022DFA9 /* LGZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */; };
+		189FD5221CD89AD30022DFA9 /* LGZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */; };
+		189FD5251CD89AE50022DFA9 /* LGZNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */; };
+		189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */; };
+		189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,14 @@
 		189FD5111CD883810022DFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189FD51D1CD890FA0022DFA9 /* LGZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTabBarController.h; sourceTree = "<group>"; };
 		189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBarController.m; sourceTree = "<group>"; };
+		189FD5201CD89AD30022DFA9 /* LGZEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZEssenceViewController.h; sourceTree = "<group>"; };
+		189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZEssenceViewController.m; sourceTree = "<group>"; };
+		189FD5231CD89AE50022DFA9 /* LGZNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZNewViewController.h; sourceTree = "<group>"; };
+		189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZNewViewController.m; sourceTree = "<group>"; };
+		189FD5261CD89B060022DFA9 /* LGZFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZFriendTrendsViewController.h; sourceTree = "<group>"; };
+		189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZFriendTrendsViewController.m; sourceTree = "<group>"; };
+		189FD5291CD89B0F0022DFA9 /* LGZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZMeViewController.h; sourceTree = "<group>"; };
+		189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,14 @@
 				189FD4EE1CD883810022DFA9 /* AppDelegate.m */,
 				189FD51D1CD890FA0022DFA9 /* LGZTabBarController.h */,
 				189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */,
+				189FD5201CD89AD30022DFA9 /* LGZEssenceViewController.h */,
+				189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */,
+				189FD5291CD89B0F0022DFA9 /* LGZMeViewController.h */,
+				189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */,
+				189FD5261CD89B060022DFA9 /* LGZFriendTrendsViewController.h */,
+				189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */,
+				189FD5231CD89AE50022DFA9 /* LGZNewViewController.h */,
+				189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */,
 				189FD4EA1CD883810022DFA9 /* Supporting Files */,
 			);
 			path = "百思不得姐";
@@ -266,8 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				189FD4EF1CD883810022DFA9 /* AppDelegate.m in Sources */,
+				189FD5251CD89AE50022DFA9 /* LGZNewViewController.m in Sources */,
 				189FD51F1CD890FA0022DFA9 /* LGZTabBarController.m in Sources */,
 				189FD4EC1CD883810022DFA9 /* main.m in Sources */,
+				189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */,
+				189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */,
+				189FD5221CD89AD30022DFA9 /* LGZEssenceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
