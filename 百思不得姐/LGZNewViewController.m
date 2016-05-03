@@ -22,12 +22,7 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:titleImage];
     
     // 设置导航栏左边的按钮
-    UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [newButton setBackgroundImage:[UIImage imageNamed:@"MainTagSubIcon"] forState:UIControlStateNormal];
-    [newButton setBackgroundImage:[UIImage imageNamed:@"MainTagSubIconClick"] forState:UIControlStateHighlighted];
-    newButton.size = newButton.currentBackgroundImage.size;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:newButton];
-    [newButton addTarget:self action:@selector(newClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" Highlight:@"MainTagSubIconClick" traget:self action:@selector(newClick)];
 }
 
 - (void)newClick
