@@ -11,6 +11,7 @@
 #import "LGZNewViewController.h"
 #import "LGZFriendTrendsViewController.h"
 #import "LGZMeViewController.h"
+#import "LGZTabBar.h"
 
 @interface LGZTabBarController ()
 
@@ -37,6 +38,8 @@
     [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
     [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    
+    [self setValue:[[LGZTabBar alloc] init] forKeyPath:@"tabBar"];
 }
 
 
