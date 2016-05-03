@@ -16,16 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 创建自定,只是tabbar字体的颜色大小等
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+    dict[NSFontAttributeName] = [UIFont systemFontOfSize:12];
+    
+    // 通过appearance统一设置
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:dict forState:UIControlStateSelected];
+
     UIViewController *vc01 = [[UIViewController alloc] init];
     vc01.view.backgroundColor = [UIColor redColor];
     vc01.tabBarItem.title = @"精华";
     vc01.tabBarItem.image = [UIImage imageNamed:@"tabBar_essence_icon"];
     vc01.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_essence_click_icon"];
     
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
     
-    [vc01.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+//    [vc01.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     
     [self addChildViewController:vc01];
     
@@ -35,17 +43,17 @@
     vc02.tabBarItem.image = [UIImage imageNamed:@"tabBar_new_icon"];
     vc02.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_new_click_icon"];
     
-    [vc02.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+//    [vc02.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     
     [self addChildViewController:vc02];
     
     UIViewController *vc03 = [[UIViewController alloc] init];
     vc03.view.backgroundColor = [UIColor greenColor];
-    vc03.tabBarItem.title = @"朋友";
+    vc03.tabBarItem.title = @"关注";
     vc03.tabBarItem.image = [UIImage imageNamed:@"tabBar_friendTrends_icon"];
     vc03.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
     
-     [vc03.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+//     [vc03.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     
     [self addChildViewController:vc03];
     
@@ -55,7 +63,7 @@
     vc04.tabBarItem.image = [UIImage imageNamed:@"tabBar_me_icon"];
     vc04.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_me_click_icon"];
     
-     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+//     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     
     [self addChildViewController:vc04];
 }
