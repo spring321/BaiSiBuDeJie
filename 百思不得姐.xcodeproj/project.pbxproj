@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1894C3A11CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3A01CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m */; };
-		189FD4EC1CD883810022DFA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD4EB1CD883810022DFA9 /* main.m */; };
-		189FD4EF1CD883810022DFA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD4EE1CD883810022DFA9 /* AppDelegate.m */; };
+		1894C3CB1CD8E54C00641572 /* LGZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3A61CD8E54C00641572 /* LGZEssenceViewController.m */; };
+		1894C3CC1CD8E54C00641572 /* LGZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3AC1CD8E54C00641572 /* LGZFriendTrendsViewController.m */; };
+		1894C3CD1CD8E54C00641572 /* LGZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3B21CD8E54C00641572 /* LGZMeViewController.m */; };
+		1894C3CE1CD8E54C00641572 /* LGZNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3B81CD8E54C00641572 /* LGZNewViewController.m */; };
+		1894C3CF1CD8E54C00641572 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3BD1CD8E54C00641572 /* AppDelegate.m */; };
+		1894C3D01CD8E54C00641572 /* LGZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3C01CD8E54C00641572 /* LGZTabBarController.m */; };
+		1894C3D11CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3C31CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m */; };
+		1894C3D21CD8E54C00641572 /* UIView+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3C51CD8E54C00641572 /* UIView+LGZExtension.m */; };
+		1894C3D31CD8E54C00641572 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3C61CD8E54C00641572 /* main.m */; };
+		1894C3D41CD8E54C00641572 /* LGZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3CA1CD8E54C00641572 /* LGZTabBar.m */; };
 		189FD4F71CD883810022DFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FD4F61CD883810022DFA9 /* Assets.xcassets */; };
 		189FD5051CD883810022DFA9 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5041CD883810022DFA9 /* _____Tests.m */; };
 		189FD5101CD883810022DFA9 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD50F1CD883810022DFA9 /* _____UITests.m */; };
-		189FD51F1CD890FA0022DFA9 /* LGZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */; };
-		189FD5221CD89AD30022DFA9 /* LGZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */; };
-		189FD5251CD89AE50022DFA9 /* LGZNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */; };
-		189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */; };
-		189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */; };
-		189FD52E1CD8A3730022DFA9 /* LGZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */; };
-		189FD5311CD8AEA30022DFA9 /* UIView+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +40,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1894C39F1CD8DBC600641572 /* UIBarButtonItem+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LGZExtension.h"; sourceTree = "<group>"; };
-		1894C3A01CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LGZExtension.m"; sourceTree = "<group>"; };
+		1894C3A51CD8E54C00641572 /* LGZEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZEssenceViewController.h; sourceTree = "<group>"; };
+		1894C3A61CD8E54C00641572 /* LGZEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZEssenceViewController.m; sourceTree = "<group>"; };
+		1894C3AB1CD8E54C00641572 /* LGZFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZFriendTrendsViewController.h; sourceTree = "<group>"; };
+		1894C3AC1CD8E54C00641572 /* LGZFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZFriendTrendsViewController.m; sourceTree = "<group>"; };
+		1894C3B11CD8E54C00641572 /* LGZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZMeViewController.h; sourceTree = "<group>"; };
+		1894C3B21CD8E54C00641572 /* LGZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZMeViewController.m; sourceTree = "<group>"; };
+		1894C3B71CD8E54C00641572 /* LGZNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZNewViewController.h; sourceTree = "<group>"; };
+		1894C3B81CD8E54C00641572 /* LGZNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZNewViewController.m; sourceTree = "<group>"; };
+		1894C3BC1CD8E54C00641572 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1894C3BD1CD8E54C00641572 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1894C3BF1CD8E54C00641572 /* LGZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTabBarController.h; sourceTree = "<group>"; };
+		1894C3C01CD8E54C00641572 /* LGZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBarController.m; sourceTree = "<group>"; };
+		1894C3C21CD8E54C00641572 /* UIBarButtonItem+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LGZExtension.h"; sourceTree = "<group>"; };
+		1894C3C31CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LGZExtension.m"; sourceTree = "<group>"; };
+		1894C3C41CD8E54C00641572 /* UIView+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LGZExtension.h"; sourceTree = "<group>"; };
+		1894C3C51CD8E54C00641572 /* UIView+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGZExtension.m"; sourceTree = "<group>"; };
+		1894C3C61CD8E54C00641572 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1894C3C71CD8E54C00641572 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1894C3C91CD8E54C00641572 /* LGZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTabBar.h; sourceTree = "<group>"; };
+		1894C3CA1CD8E54C00641572 /* LGZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBar.m; sourceTree = "<group>"; };
 		189FD4E71CD883810022DFA9 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		189FD4EB1CD883810022DFA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		189FD4ED1CD883810022DFA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		189FD4EE1CD883810022DFA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		189FD4F61CD883810022DFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189FD4FB1CD883810022DFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189FD5001CD883810022DFA9 /* 百思不得姐Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "百思不得姐Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,21 +69,6 @@
 		189FD50B1CD883810022DFA9 /* 百思不得姐UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "百思不得姐UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FD50F1CD883810022DFA9 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
 		189FD5111CD883810022DFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189FD51D1CD890FA0022DFA9 /* LGZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTabBarController.h; sourceTree = "<group>"; };
-		189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBarController.m; sourceTree = "<group>"; };
-		189FD5201CD89AD30022DFA9 /* LGZEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZEssenceViewController.h; sourceTree = "<group>"; };
-		189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZEssenceViewController.m; sourceTree = "<group>"; };
-		189FD5231CD89AE50022DFA9 /* LGZNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZNewViewController.h; sourceTree = "<group>"; };
-		189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZNewViewController.m; sourceTree = "<group>"; };
-		189FD5261CD89B060022DFA9 /* LGZFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZFriendTrendsViewController.h; sourceTree = "<group>"; };
-		189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZFriendTrendsViewController.m; sourceTree = "<group>"; };
-		189FD5291CD89B0F0022DFA9 /* LGZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZMeViewController.h; sourceTree = "<group>"; };
-		189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZMeViewController.m; sourceTree = "<group>"; };
-		189FD52C1CD8A3730022DFA9 /* LGZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTabBar.h; sourceTree = "<group>"; };
-		189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBar.m; sourceTree = "<group>"; };
-		189FD52F1CD8AEA30022DFA9 /* UIView+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LGZExtension.h"; sourceTree = "<group>"; };
-		189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGZExtension.m"; sourceTree = "<group>"; };
-		189FD5321CD8AF370022DFA9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +96,193 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1894C3A21CD8E54C00641572 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3A31CD8E54C00641572 /* Essence - 精华 */,
+				1894C3A91CD8E54C00641572 /* FriendTRance - 新帖 */,
+				1894C3AF1CD8E54C00641572 /* Me - 我 */,
+				1894C3B51CD8E54C00641572 /* New - 关注 */,
+				1894C3BB1CD8E54C00641572 /* Other - 其他 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1894C3A31CD8E54C00641572 /* Essence - 精华 */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3A41CD8E54C00641572 /* C */,
+				1894C3A71CD8E54C00641572 /* M */,
+				1894C3A81CD8E54C00641572 /* V */,
+			);
+			path = "Essence - 精华";
+			sourceTree = "<group>";
+		};
+		1894C3A41CD8E54C00641572 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3A51CD8E54C00641572 /* LGZEssenceViewController.h */,
+				1894C3A61CD8E54C00641572 /* LGZEssenceViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		1894C3A71CD8E54C00641572 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		1894C3A81CD8E54C00641572 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		1894C3A91CD8E54C00641572 /* FriendTRance - 新帖 */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3AA1CD8E54C00641572 /* C */,
+				1894C3AD1CD8E54C00641572 /* M */,
+				1894C3AE1CD8E54C00641572 /* V */,
+			);
+			path = "FriendTRance - 新帖";
+			sourceTree = "<group>";
+		};
+		1894C3AA1CD8E54C00641572 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3AB1CD8E54C00641572 /* LGZFriendTrendsViewController.h */,
+				1894C3AC1CD8E54C00641572 /* LGZFriendTrendsViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		1894C3AD1CD8E54C00641572 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		1894C3AE1CD8E54C00641572 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		1894C3AF1CD8E54C00641572 /* Me - 我 */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3B01CD8E54C00641572 /* C */,
+				1894C3B31CD8E54C00641572 /* M */,
+				1894C3B41CD8E54C00641572 /* V */,
+			);
+			path = "Me - 我";
+			sourceTree = "<group>";
+		};
+		1894C3B01CD8E54C00641572 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3B11CD8E54C00641572 /* LGZMeViewController.h */,
+				1894C3B21CD8E54C00641572 /* LGZMeViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		1894C3B31CD8E54C00641572 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		1894C3B41CD8E54C00641572 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		1894C3B51CD8E54C00641572 /* New - 关注 */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3B61CD8E54C00641572 /* C */,
+				1894C3B91CD8E54C00641572 /* M */,
+				1894C3BA1CD8E54C00641572 /* V */,
+			);
+			path = "New - 关注";
+			sourceTree = "<group>";
+		};
+		1894C3B61CD8E54C00641572 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3B71CD8E54C00641572 /* LGZNewViewController.h */,
+				1894C3B81CD8E54C00641572 /* LGZNewViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		1894C3B91CD8E54C00641572 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		1894C3BA1CD8E54C00641572 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		1894C3BB1CD8E54C00641572 /* Other - 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3BC1CD8E54C00641572 /* AppDelegate.h */,
+				1894C3BD1CD8E54C00641572 /* AppDelegate.m */,
+				1894C3BE1CD8E54C00641572 /* C */,
+				1894C3C11CD8E54C00641572 /* Category - 类扩展 */,
+				1894C3C61CD8E54C00641572 /* main.m */,
+				1894C3C71CD8E54C00641572 /* PrefixHeader.pch */,
+				1894C3C81CD8E54C00641572 /* V */,
+			);
+			path = "Other - 其他";
+			sourceTree = "<group>";
+		};
+		1894C3BE1CD8E54C00641572 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3BF1CD8E54C00641572 /* LGZTabBarController.h */,
+				1894C3C01CD8E54C00641572 /* LGZTabBarController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		1894C3C11CD8E54C00641572 /* Category - 类扩展 */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3C21CD8E54C00641572 /* UIBarButtonItem+LGZExtension.h */,
+				1894C3C31CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m */,
+				1894C3C41CD8E54C00641572 /* UIView+LGZExtension.h */,
+				1894C3C51CD8E54C00641572 /* UIView+LGZExtension.m */,
+			);
+			path = "Category - 类扩展";
+			sourceTree = "<group>";
+		};
+		1894C3C81CD8E54C00641572 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				1894C3C91CD8E54C00641572 /* LGZTabBar.h */,
+				1894C3CA1CD8E54C00641572 /* LGZTabBar.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		189FD4DE1CD883810022DFA9 = {
 			isa = PBXGroup;
 			children = (
@@ -119,25 +306,7 @@
 		189FD4E91CD883810022DFA9 /* 百思不得姐 */ = {
 			isa = PBXGroup;
 			children = (
-				189FD4ED1CD883810022DFA9 /* AppDelegate.h */,
-				189FD4EE1CD883810022DFA9 /* AppDelegate.m */,
-				189FD5201CD89AD30022DFA9 /* LGZEssenceViewController.h */,
-				189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */,
-				189FD5231CD89AE50022DFA9 /* LGZNewViewController.h */,
-				189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */,
-				189FD5261CD89B060022DFA9 /* LGZFriendTrendsViewController.h */,
-				189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */,
-				189FD5291CD89B0F0022DFA9 /* LGZMeViewController.h */,
-				189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */,
-				189FD51D1CD890FA0022DFA9 /* LGZTabBarController.h */,
-				189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */,
-				189FD52C1CD8A3730022DFA9 /* LGZTabBar.h */,
-				189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */,
-				189FD52F1CD8AEA30022DFA9 /* UIView+LGZExtension.h */,
-				189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */,
-				1894C39F1CD8DBC600641572 /* UIBarButtonItem+LGZExtension.h */,
-				1894C3A01CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m */,
-				189FD5321CD8AF370022DFA9 /* PrefixHeader.pch */,
+				1894C3A21CD8E54C00641572 /* Classes */,
 				189FD4EA1CD883810022DFA9 /* Supporting Files */,
 			);
 			path = "百思不得姐";
@@ -148,7 +317,6 @@
 			children = (
 				189FD4F61CD883810022DFA9 /* Assets.xcassets */,
 				189FD4FB1CD883810022DFA9 /* Info.plist */,
-				189FD4EB1CD883810022DFA9 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -302,16 +470,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189FD4EF1CD883810022DFA9 /* AppDelegate.m in Sources */,
-				189FD5251CD89AE50022DFA9 /* LGZNewViewController.m in Sources */,
-				189FD51F1CD890FA0022DFA9 /* LGZTabBarController.m in Sources */,
-				189FD4EC1CD883810022DFA9 /* main.m in Sources */,
-				1894C3A11CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m in Sources */,
-				189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */,
-				189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */,
-				189FD5221CD89AD30022DFA9 /* LGZEssenceViewController.m in Sources */,
-				189FD5311CD8AEA30022DFA9 /* UIView+LGZExtension.m in Sources */,
-				189FD52E1CD8A3730022DFA9 /* LGZTabBar.m in Sources */,
+				1894C3D11CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m in Sources */,
+				1894C3CC1CD8E54C00641572 /* LGZFriendTrendsViewController.m in Sources */,
+				1894C3D01CD8E54C00641572 /* LGZTabBarController.m in Sources */,
+				1894C3D41CD8E54C00641572 /* LGZTabBar.m in Sources */,
+				1894C3CD1CD8E54C00641572 /* LGZMeViewController.m in Sources */,
+				1894C3CB1CD8E54C00641572 /* LGZEssenceViewController.m in Sources */,
+				1894C3CE1CD8E54C00641572 /* LGZNewViewController.m in Sources */,
+				1894C3D21CD8E54C00641572 /* UIView+LGZExtension.m in Sources */,
+				1894C3D31CD8E54C00641572 /* main.m in Sources */,
+				1894C3CF1CD8E54C00641572 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +542,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREFIX_HEADER = "百思不得姐/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "百思不得姐/Classes/Other - 其他/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -418,7 +586,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "百思不得姐/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "百思不得姐/Classes/Other - 其他/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
