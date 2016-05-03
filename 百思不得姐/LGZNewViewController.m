@@ -16,22 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // 设置标题
+    UIImage *titleImage = [UIImage imageNamed:@"MainTitle"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:titleImage];
+    
+    // 设置导航栏左边的按钮
+    UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [newButton setBackgroundImage:[UIImage imageNamed:@"MainTagSubIcon"] forState:UIControlStateNormal];
+    [newButton setBackgroundImage:[UIImage imageNamed:@"MainTagSubIconClick"] forState:UIControlStateHighlighted];
+    newButton.size = newButton.currentBackgroundImage.size;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:newButton];
+    [newButton addTarget:self action:@selector(newClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)newClick
+{
+    LGZLog(@"%s",__func__);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

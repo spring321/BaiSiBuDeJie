@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1894C3A11CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3A01CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m */; };
 		189FD4EC1CD883810022DFA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD4EB1CD883810022DFA9 /* main.m */; };
 		189FD4EF1CD883810022DFA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD4EE1CD883810022DFA9 /* AppDelegate.m */; };
 		189FD4F71CD883810022DFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FD4F61CD883810022DFA9 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1894C39F1CD8DBC600641572 /* UIBarButtonItem+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LGZExtension.h"; sourceTree = "<group>"; };
+		1894C3A01CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LGZExtension.m"; sourceTree = "<group>"; };
 		189FD4E71CD883810022DFA9 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FD4EB1CD883810022DFA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189FD4ED1CD883810022DFA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,18 +123,20 @@
 				189FD4EE1CD883810022DFA9 /* AppDelegate.m */,
 				189FD5201CD89AD30022DFA9 /* LGZEssenceViewController.h */,
 				189FD5211CD89AD30022DFA9 /* LGZEssenceViewController.m */,
-				189FD5291CD89B0F0022DFA9 /* LGZMeViewController.h */,
-				189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */,
-				189FD5261CD89B060022DFA9 /* LGZFriendTrendsViewController.h */,
-				189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */,
 				189FD5231CD89AE50022DFA9 /* LGZNewViewController.h */,
 				189FD5241CD89AE50022DFA9 /* LGZNewViewController.m */,
+				189FD5261CD89B060022DFA9 /* LGZFriendTrendsViewController.h */,
+				189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */,
+				189FD5291CD89B0F0022DFA9 /* LGZMeViewController.h */,
+				189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */,
 				189FD51D1CD890FA0022DFA9 /* LGZTabBarController.h */,
 				189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */,
 				189FD52C1CD8A3730022DFA9 /* LGZTabBar.h */,
 				189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */,
 				189FD52F1CD8AEA30022DFA9 /* UIView+LGZExtension.h */,
 				189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */,
+				1894C39F1CD8DBC600641572 /* UIBarButtonItem+LGZExtension.h */,
+				1894C3A01CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m */,
 				189FD5321CD8AF370022DFA9 /* PrefixHeader.pch */,
 				189FD4EA1CD883810022DFA9 /* Supporting Files */,
 			);
@@ -301,6 +306,7 @@
 				189FD5251CD89AE50022DFA9 /* LGZNewViewController.m in Sources */,
 				189FD51F1CD890FA0022DFA9 /* LGZTabBarController.m in Sources */,
 				189FD4EC1CD883810022DFA9 /* main.m in Sources */,
+				1894C3A11CD8DBC600641572 /* UIBarButtonItem+LGZExtension.m in Sources */,
 				189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */,
 				189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */,
 				189FD5221CD89AD30022DFA9 /* LGZEssenceViewController.m in Sources */,
@@ -526,6 +532,7 @@
 				189FD5161CD883810022DFA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		189FD5171CD883810022DFA9 /* Build configuration list for PBXNativeTarget "百思不得姐Tests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +541,7 @@
 				189FD5191CD883810022DFA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		189FD51A1CD883810022DFA9 /* Build configuration list for PBXNativeTarget "百思不得姐UITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +550,7 @@
 				189FD51C1CD883810022DFA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

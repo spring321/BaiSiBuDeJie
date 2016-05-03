@@ -9,5 +9,17 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 #import "UIView+LGZExtension.h"
+#import "UIBarButtonItem+LGZExtension.h"
+
+
+#ifdef DEBUG
+#define LGZLog(...) NSLog(__VA_ARGS__)
+
+#else
+#define LGZLog(...)
+
+#endif
+
+#define LGZLogFunC LGZLog(...)
 
 #endif /* PrefixHeader_pch */

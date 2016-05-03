@@ -33,11 +33,11 @@
 
     [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
-    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"最新" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    [self setUpChild:[[LGZNewViewController alloc] init] title:@"最新" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
-    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    [self setUpChild:[[LGZFriendTrendsViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
-    [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setUpChild:[[LGZMeViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     [self setValue:[[LGZTabBar alloc] init] forKeyPath:@"tabBar"];
 }
@@ -53,8 +53,10 @@
     vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1];
     
     //     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+    // 为每个控制器包装一个navigation
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
-    [self addChildViewController:vc];
+    [self addChildViewController:nav];
 }
 
 /*

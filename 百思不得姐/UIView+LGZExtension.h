@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (LGZExtension)
+
+@property (nonatomic, assign) CGSize size;
 /** 宽度 */
 @property (nonatomic, assign) CGFloat width;
 /** 高度 */
