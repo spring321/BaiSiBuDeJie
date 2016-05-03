@@ -18,6 +18,7 @@
 		189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5271CD89B060022DFA9 /* LGZFriendTrendsViewController.m */; };
 		189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */; };
 		189FD52E1CD8A3730022DFA9 /* LGZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */; };
+		189FD5311CD8AEA30022DFA9 /* UIView+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,9 @@
 		189FD52A1CD89B0F0022DFA9 /* LGZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZMeViewController.m; sourceTree = "<group>"; };
 		189FD52C1CD8A3730022DFA9 /* LGZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTabBar.h; sourceTree = "<group>"; };
 		189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBar.m; sourceTree = "<group>"; };
+		189FD52F1CD8AEA30022DFA9 /* UIView+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LGZExtension.h"; sourceTree = "<group>"; };
+		189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGZExtension.m"; sourceTree = "<group>"; };
+		189FD5321CD8AF370022DFA9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,9 @@
 				189FD51E1CD890FA0022DFA9 /* LGZTabBarController.m */,
 				189FD52C1CD8A3730022DFA9 /* LGZTabBar.h */,
 				189FD52D1CD8A3730022DFA9 /* LGZTabBar.m */,
+				189FD52F1CD8AEA30022DFA9 /* UIView+LGZExtension.h */,
+				189FD5301CD8AEA30022DFA9 /* UIView+LGZExtension.m */,
+				189FD5321CD8AF370022DFA9 /* PrefixHeader.pch */,
 				189FD4EA1CD883810022DFA9 /* Supporting Files */,
 			);
 			path = "百思不得姐";
@@ -297,6 +304,7 @@
 				189FD5281CD89B060022DFA9 /* LGZFriendTrendsViewController.m in Sources */,
 				189FD52B1CD89B0F0022DFA9 /* LGZMeViewController.m in Sources */,
 				189FD5221CD89AD30022DFA9 /* LGZEssenceViewController.m in Sources */,
+				189FD5311CD8AEA30022DFA9 /* UIView+LGZExtension.m in Sources */,
 				189FD52E1CD8A3730022DFA9 /* LGZTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +368,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "百思不得姐/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -403,6 +412,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "百思不得姐/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

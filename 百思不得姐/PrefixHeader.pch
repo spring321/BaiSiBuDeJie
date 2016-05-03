@@ -1,0 +1,13 @@
+//
+//  PrefixHeader.pch
+//  百思不得姐
+//
+//  Created by LGZwr on 16/5/3.
+//  Copyright © 2016年 LGZ. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "UIView+LGZExtension.h"
+
+#endif /* PrefixHeader_pch */
