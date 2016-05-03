@@ -101,8 +101,8 @@
 			children = (
 				1894C3A31CD8E54C00641572 /* Essence - 精华 */,
 				1894C3A91CD8E54C00641572 /* FriendTRance - 新帖 */,
-				1894C3AF1CD8E54C00641572 /* Me - 我 */,
 				1894C3B51CD8E54C00641572 /* New - 关注 */,
+				1894C3AF1CD8E54C00641572 /* Me - 我 */,
 				1894C3BB1CD8E54C00641572 /* Other - 其他 */,
 			);
 			path = Classes;
@@ -243,13 +243,13 @@
 		1894C3BB1CD8E54C00641572 /* Other - 其他 */ = {
 			isa = PBXGroup;
 			children = (
+				1894C3BE1CD8E54C00641572 /* C */,
+				1894C3C81CD8E54C00641572 /* V */,
+				1894C3C11CD8E54C00641572 /* Category - 类扩展 */,
 				1894C3BC1CD8E54C00641572 /* AppDelegate.h */,
 				1894C3BD1CD8E54C00641572 /* AppDelegate.m */,
-				1894C3BE1CD8E54C00641572 /* C */,
-				1894C3C11CD8E54C00641572 /* Category - 类扩展 */,
 				1894C3C61CD8E54C00641572 /* main.m */,
 				1894C3C71CD8E54C00641572 /* PrefixHeader.pch */,
-				1894C3C81CD8E54C00641572 /* V */,
 			);
 			path = "Other - 其他";
 			sourceTree = "<group>";

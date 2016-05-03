@@ -32,6 +32,7 @@
                                                moonButton
                                                
                                                ];
+    self.view.backgroundColor = LGZGolbalBG;
 
 }
 

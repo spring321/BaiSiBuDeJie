@@ -46,11 +46,11 @@
 // 设置tabBarItem属性
 - (void)setUpChild:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
-    vc.view.backgroundColor = [UIColor grayColor];
+//    vc.view.backgroundColor = [UIColor grayColor];
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
-    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1];
+
     
     //     [vc04.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
     // 为每个控制器包装一个navigation

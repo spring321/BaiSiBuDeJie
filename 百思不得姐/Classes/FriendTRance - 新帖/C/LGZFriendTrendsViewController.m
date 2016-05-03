@@ -22,6 +22,7 @@
     
     // 设置导航栏左边的按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"friendsRecommentIcon" Highlight:@"friendsRecommentIcon-click" traget:self action:@selector(friendClick)];
+    self.view.backgroundColor = LGZGolbalBG;
     
 }
 
