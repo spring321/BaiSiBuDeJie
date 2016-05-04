@@ -14,6 +14,14 @@
 
 @implementation LGZNavgationController
 
+
+// 在initialize中统一设置LGZNavgationController中的navigationbar的背景图片,而且只会调用一次该方法
++ (void)initialize
+{
+    UINavigationBar *nav = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
+    [nav setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -48,6 +56,7 @@
         UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
         viewController.navigationItem.leftBarButtonItem = left;
+        viewController.hidesBottomBarWhenPushed = YES;
     }
     [super pushViewController:viewController animated:animated];
 }

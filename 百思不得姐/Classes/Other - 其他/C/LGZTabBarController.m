@@ -20,9 +20,9 @@
 
 @implementation LGZTabBarController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+// 通过initialize一次性设置tabbar样式
++ (void)initialize
+{
     // 创建自定,只是tabbar字体的颜色大小等
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
@@ -32,6 +32,12 @@
     UITabBarItem *item = [UITabBarItem appearance];
     [item setTitleTextAttributes:dict forState:UIControlStateSelected];
 
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
     [self setUpChild:[[LGZEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
     [self setUpChild:[[LGZNewViewController alloc] init] title:@"最新" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
