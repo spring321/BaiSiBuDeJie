@@ -18,6 +18,7 @@
 		1894C3D31CD8E54C00641572 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3C61CD8E54C00641572 /* main.m */; };
 		1894C3D41CD8E54C00641572 /* LGZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3CA1CD8E54C00641572 /* LGZTabBar.m */; };
 		1894C3D71CD8F23900641572 /* LGZNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C3D61CD8F23900641572 /* LGZNavgationController.m */; };
+		1894C3D91CD9849C00641572 /* LGZFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1894C3D81CD9849C00641572 /* LGZFriendTrendsViewController.xib */; };
 		189FD4F71CD883810022DFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FD4F61CD883810022DFA9 /* Assets.xcassets */; };
 		189FD5051CD883810022DFA9 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD5041CD883810022DFA9 /* _____Tests.m */; };
 		189FD5101CD883810022DFA9 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FD50F1CD883810022DFA9 /* _____UITests.m */; };
@@ -63,6 +64,7 @@
 		1894C3CA1CD8E54C00641572 /* LGZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTabBar.m; sourceTree = "<group>"; };
 		1894C3D51CD8F23900641572 /* LGZNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZNavgationController.h; sourceTree = "<group>"; };
 		1894C3D61CD8F23900641572 /* LGZNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZNavgationController.m; sourceTree = "<group>"; };
+		1894C3D81CD9849C00641572 /* LGZFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LGZFriendTrendsViewController.xib; path = "../../New - 关注/C/LGZFriendTrendsViewController.xib"; sourceTree = "<group>"; };
 		189FD4E71CD883810022DFA9 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FD4F61CD883810022DFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189FD4FB1CD883810022DFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				1894C3A31CD8E54C00641572 /* Essence - 精华 */,
-				1894C3A91CD8E54C00641572 /* FriendTRance - 新帖 */,
-				1894C3B51CD8E54C00641572 /* New - 关注 */,
+				1894C3B51CD8E54C00641572 /* New - 新帖 */,
+				1894C3A91CD8E54C00641572 /* FriendTRance - 关注 */,
 				1894C3AF1CD8E54C00641572 /* Me - 我 */,
 				1894C3BB1CD8E54C00641572 /* Other - 其他 */,
 			);
@@ -144,13 +146,14 @@
 			path = V;
 			sourceTree = "<group>";
 		};
-		1894C3A91CD8E54C00641572 /* FriendTRance - 新帖 */ = {
+		1894C3A91CD8E54C00641572 /* FriendTRance - 关注 */ = {
 			isa = PBXGroup;
 			children = (
 				1894C3AA1CD8E54C00641572 /* C */,
 				1894C3AD1CD8E54C00641572 /* M */,
 				1894C3AE1CD8E54C00641572 /* V */,
 			);
+			name = "FriendTRance - 关注";
 			path = "FriendTRance - 新帖";
 			sourceTree = "<group>";
 		};
@@ -159,6 +162,7 @@
 			children = (
 				1894C3AB1CD8E54C00641572 /* LGZFriendTrendsViewController.h */,
 				1894C3AC1CD8E54C00641572 /* LGZFriendTrendsViewController.m */,
+				1894C3D81CD9849C00641572 /* LGZFriendTrendsViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -210,13 +214,14 @@
 			path = V;
 			sourceTree = "<group>";
 		};
-		1894C3B51CD8E54C00641572 /* New - 关注 */ = {
+		1894C3B51CD8E54C00641572 /* New - 新帖 */ = {
 			isa = PBXGroup;
 			children = (
 				1894C3B61CD8E54C00641572 /* C */,
 				1894C3B91CD8E54C00641572 /* M */,
 				1894C3BA1CD8E54C00641572 /* V */,
 			);
+			name = "New - 新帖";
 			path = "New - 关注";
 			sourceTree = "<group>";
 		};
@@ -451,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				189FD4F71CD883810022DFA9 /* Assets.xcassets in Resources */,
+				1894C3D91CD9849C00641572 /* LGZFriendTrendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
