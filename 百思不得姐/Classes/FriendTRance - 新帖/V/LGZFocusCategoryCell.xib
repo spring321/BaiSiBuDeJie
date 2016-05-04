@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="category" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="LGZFocusCategoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCq-an-Bfu">
+                        <rect key="frame" x="0.0" y="42" width="320" height="2"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="ZPj-cX-lGW"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-Bk-uoo">
+                        <rect key="frame" x="0.0" y="0.0" width="5" height="44"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="xYS-bF-zaR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wCq-an-Bfu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0l9-YZ-rLj"/>
+                    <constraint firstItem="cxj-Bk-uoo" firstAttribute="leading" secondItem="wCq-an-Bfu" secondAttribute="leading" id="5qN-dO-aKs"/>
+                    <constraint firstAttribute="bottom" secondItem="wCq-an-Bfu" secondAttribute="bottom" id="RXr-Ds-mAb"/>
+                    <constraint firstItem="cxj-Bk-uoo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xae-vR-cLg"/>
+                    <constraint firstAttribute="trailing" secondItem="wCq-an-Bfu" secondAttribute="trailing" id="ZiS-jR-RZO"/>
+                    <constraint firstAttribute="bottom" secondItem="cxj-Bk-uoo" secondAttribute="bottom" id="iWK-co-UfK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="markView" destination="cxj-Bk-uoo" id="33a-Wy-B7m"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="294"/>
+        </tableViewCell>
+    </objects>
+</document>

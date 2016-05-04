@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LGZFocusController">
             <connections>
+                <outlet property="focusCategoryTabView" destination="4Na-7b-A1U" id="KhL-wS-f6d"/>
+                <outlet property="userTableView" destination="Ggy-c6-9SD" id="AFj-bd-GbU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,36 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Na-7b-A1U">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="T7g-rt-giM"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="KLe-vj-9ij"/>
+                        <outlet property="delegate" destination="-1" id="ZBN-mE-eNs"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-c6-9SD">
+                    <rect key="frame" x="70" y="0.0" width="530" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="z3p-Uv-uGr"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4Na-7b-A1U" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3gh-Nr-7RB"/>
+                <constraint firstAttribute="bottom" secondItem="Ggy-c6-9SD" secondAttribute="bottom" id="7tZ-8W-qXu"/>
+                <constraint firstItem="Ggy-c6-9SD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jff-09-7gS"/>
+                <constraint firstItem="4Na-7b-A1U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TN3-vI-MVd"/>
+                <constraint firstAttribute="trailing" secondItem="Ggy-c6-9SD" secondAttribute="trailing" id="XKe-M5-PPA"/>
+                <constraint firstItem="Ggy-c6-9SD" firstAttribute="leading" secondItem="4Na-7b-A1U" secondAttribute="trailing" id="ofg-hL-Ecb"/>
+                <constraint firstAttribute="bottom" secondItem="4Na-7b-A1U" secondAttribute="bottom" id="x8f-Hk-QBw"/>
+            </constraints>
         </view>
     </objects>
 </document>
