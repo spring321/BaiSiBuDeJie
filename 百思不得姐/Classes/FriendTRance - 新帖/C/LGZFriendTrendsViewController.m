@@ -7,6 +7,7 @@
 //
 
 #import "LGZFriendTrendsViewController.h"
+#import "LGZFocusController.h"
 
 @interface LGZFriendTrendsViewController ()
 
@@ -28,7 +29,9 @@
 
 - (void)friendClick
 {
-    LGZLog(@"%s",__func__);
+    LGZFocusController *vc = [[LGZFocusController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 /*
