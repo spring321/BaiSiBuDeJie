@@ -103,7 +103,8 @@ static NSString * const userId = @"userCell";
     if (tableView == self.focusCategoryTabView ){
         return self.categorys.count;
     }else{
-        return self.usersModel.count;
+        LGZFocusCategory *c = self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row];
+        return c.users.count;
     }
 }
 
@@ -115,7 +116,9 @@ static NSString * const userId = @"userCell";
         return cell;
     }else{
         LGZUserCell *cell = [tableView dequeueReusableCellWithIdentifier:userId];
-        cell.userModel = self.usersModel[indexPath.row];
+        
+        LGZFocusCategory *c = self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row];
+        cell.userModel = c.users[indexPath.row];
         return cell;
 
     }
@@ -127,10 +130,12 @@ static NSString * const userId = @"userCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.focusCategoryTabView){
+    LGZFocusCategory *category = self.categorys[indexPath.row];
+
     
-        LGZFocusCategory *category = self.categorys[indexPath.row];
-        NSLog(@"%@", category.name);
+    if ([self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row] users].count){
+        [self.userTableView reloadData];
+    }else{
         
         // 通过左边的来请求右边的数据
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -142,7 +147,8 @@ static NSString * const userId = @"userCell";
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             //        NSLog(@"%@", responseObject[@"list"]);
-            self.usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            NSArray *usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            [category.users addObjectsFromArray:usersModel];
             [self.userTableView reloadData];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             

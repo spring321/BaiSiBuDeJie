@@ -15,4 +15,7 @@
 @property (nonatomic, assign) NSInteger count;
 /** name */
 @property (nonatomic, copy) NSString *name;
+/** 右边的关注 */
+@property (nonatomic, strong) NSMutableArray *users;
+
 @end
