@@ -18,4 +18,14 @@
 /** 右边的关注 */
 @property (nonatomic, strong) NSMutableArray *users;
 
+/** 总个数 */
+@property (nonatomic, assign) NSInteger total;
+
+/** 下一页 */
+@property (nonatomic, assign) NSInteger next_page;
+
+/** 总页数 */
+@property (nonatomic, assign) NSInteger total_page;
+
+
 @end

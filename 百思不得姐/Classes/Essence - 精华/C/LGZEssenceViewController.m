@@ -7,6 +7,7 @@
 //
 
 #import "LGZEssenceViewController.h"
+#import "LGZTagTableViewController.h"
 
 @interface LGZEssenceViewController ()
 
@@ -28,7 +29,8 @@
 
 - (void)tagClick
 {
-    LGZLog(@"%s",__func__);
+    LGZTagTableViewController *vc = [[LGZTagTableViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

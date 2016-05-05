@@ -16,4 +16,5 @@
 /** fans_count */
 @property (nonatomic, assign) NSInteger fans_count;
 
+
 @end

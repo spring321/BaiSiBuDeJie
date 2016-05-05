@@ -14,19 +14,28 @@
 #import "LGZFocusCategoryCell.h"
 #import "LGZUserCell.h"
 #import "LGZUserModel.h"
+#import <MJRefresh.h>
+
+#define LGZFocusSelected self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row]
 
 @interface LGZFocusController () <UITableViewDelegate,UITableViewDataSource>
-/** 存储模型数组 */
+/** 存储左边模型数组 */
 @property (nonatomic, strong) NSMutableArray *categorys;
 
-/** 存储右边用户的数组 */
-@property (nonatomic, strong) NSMutableArray *usersModel;
+///** 存储右边用户的数组 */
+//@property (nonatomic, strong) NSMutableArray *usersModel;
 
 /**右边的tableView*/
 @property (strong, nonatomic) IBOutlet UITableView *userTableView;
 
 /**左边的tableView*/
 @property (strong, nonatomic) IBOutlet UITableView *focusCategoryTabView;
+
+/** 存储请求 */
+@property (nonatomic, strong) NSMutableDictionary *params;
+
+/** afn的manger */
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 @end
 
@@ -35,23 +44,39 @@
 static NSString * const categoryId = @"category";
 static NSString * const userId = @"userCell";
 
+- (AFHTTPSessionManager *)manager
+{
+    if (!_manager){
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setUpTableView];
+    [self setTableViewFoot];
     // 设置hud
     [SVProgressHUD show];
     
     
+    [self getLeftCategory];
+}
+
+// 获得左侧数据
+- (void)getLeftCategory
+{
     // 设置请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"category";
     params[@"c"] = @"subscribe";
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"%@", responseObject);
+        //        NSLog(@"%@", responseObject);
         
         // 将字典数组转换为模型数组
         self.categorys = [LGZFocusCategory mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -59,16 +84,104 @@ static NSString * const userId = @"userCell";
         [SVProgressHUD dismiss];
         [self.focusCategoryTabView reloadData];
         [self.focusCategoryTabView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+        [self.userTableView.mj_header beginRefreshing];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"请求失败"];
     }];
     
-
+    
 
 }
 
+#pragma mark - 设置刷新控件
+- (void)setTableViewFoot
+{
+    self.userTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
+    self.userTableView.mj_footer.hidden = YES;
+    
+    self.userTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
+}
+
+- (void)loadNewUsers
+{
+    
+        LGZFocusCategory *c = LGZFocusSelected;
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"a"] = @"list";
+        params[@"c"] = @"subscribe";
+        params[@"category_id"] = @(c.id);
+        
+        self.params = params;
+        [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            //        NSLog(@"%@", responseObject[@"list"]);
+            if (self.params != params) return;
+            NSArray *usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            [c.users removeAllObjects];
+            [c.users addObjectsFromArray:usersModel];
+            c.total = [responseObject[@"total"] integerValue];
+            c.total_page = [responseObject[@"total_page"] integerValue];
+            c.next_page = [responseObject[@"next_page"] integerValue];
+            
+            [self.userTableView reloadData];
+            
+            [self.userTableView.mj_header endRefreshing];
+            
+            // 判断一下页数是否大于总页数
+            if(c.next_page > c.total_page){
+                [self.userTableView.mj_footer endRefreshingWithNoMoreData];
+            }else{
+                [self.userTableView.mj_footer endRefreshing];
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+
+    
+
+}
+
+- (void)loadMoreUsers
+{
+    LGZFocusCategory *c = LGZFocusSelected;
+
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = @(c.id);
+    
+    params[@"page"] = @(c.next_page);
+    
+    self.params = params;
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //        NSLog(@"%@", responseObject[@"list"]);
+        if (self.params != params) return;
+        NSArray *usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [c.users addObjectsFromArray:usersModel];
+        c.total = [responseObject[@"total"] integerValue];
+        c.total_page = [responseObject[@"total_page"] integerValue];
+        c.next_page = [responseObject[@"next_page"] integerValue];
+        
+        [self.userTableView reloadData];
+        
+        [self.userTableView.mj_footer endRefreshing];
+        
+        if (c.next_page > c.total_page){
+            [self.userTableView.mj_footer endRefreshingWithNoMoreData];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+
+}
+
+// 设置tableView
 - (void)setUpTableView
 {
 
@@ -103,7 +216,8 @@ static NSString * const userId = @"userCell";
     if (tableView == self.focusCategoryTabView ){
         return self.categorys.count;
     }else{
-        LGZFocusCategory *c = self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row];
+        LGZFocusCategory *c = LGZFocusSelected;
+        self.userTableView.mj_footer.hidden = (c.users.count == 0);
         return c.users.count;
     }
 }
@@ -117,7 +231,7 @@ static NSString * const userId = @"userCell";
     }else{
         LGZUserCell *cell = [tableView dequeueReusableCellWithIdentifier:userId];
         
-        LGZFocusCategory *c = self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row];
+        LGZFocusCategory *c = LGZFocusSelected;
         cell.userModel = c.users[indexPath.row];
         return cell;
 
@@ -130,33 +244,26 @@ static NSString * const userId = @"userCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LGZFocusCategory *category = self.categorys[indexPath.row];
-
-    
-    if ([self.categorys[self.focusCategoryTabView.indexPathForSelectedRow.row] users].count){
+//    LGZFocusCategory *category = self.categorys[indexPath.row];
+//    LGZUserModel *c = [LGZFocusSelected users];
+    [self.userTableView.mj_header endRefreshing];
+    if ([LGZFocusSelected users].count)
+    {
         [self.userTableView reloadData];
     }else{
         
-        // 通过左边的来请求右边的数据
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        params[@"a"] = @"list";
-        params[@"c"] = @"subscribe";
-        params[@"category_id"] = @(category.id);
-        
-        [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            //        NSLog(@"%@", responseObject[@"list"]);
-            NSArray *usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-            [category.users addObjectsFromArray:usersModel];
+            // 防止点击没反应
             [self.userTableView reloadData];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-        }];
+            [self.userTableView.mj_header beginRefreshing];
+
         
-    }
+        }
  }
 
+- (void)dealloc
+{
+    [self.manager.operationQueue cancelAllOperations];
+}
 /*
 #pragma mark - Navigation
 
