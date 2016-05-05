@@ -8,6 +8,7 @@
 
 #import "LGZFriendTrendsViewController.h"
 #import "LGZFocusController.h"
+#import "LGZVLoginResginController.h"
 
 @interface LGZFriendTrendsViewController ()
 
@@ -33,6 +34,13 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+- (IBAction)loginResginBtn:(id)sender {
+    
+    LGZVLoginResginController *vc = [[LGZVLoginResginController alloc] init];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+ }
 
 /*
 #pragma mark - Navigation
