@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LGZTabBarController.h"
+#import "LGZGuidePushView.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +31,10 @@
     
     // 显示窗口
     [self.window makeKeyAndVisible];
+    
+    
+    
+    [LGZGuidePushView show];
     
     return YES;
 }

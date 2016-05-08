@@ -66,6 +66,7 @@
 //
 - (IBAction)loginOrResingButton:(UIButton *)sender {
     
+    [self.view endEditing:YES];
     if (self.loginViewLeftMargin.constant == 0){
     self.loginViewLeftMargin.constant = - self.view.width;
         [sender setTitle:@"注册账号" forState:UIControlStateNormal];
