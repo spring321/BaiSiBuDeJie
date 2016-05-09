@@ -60,10 +60,11 @@
     [self addChildViewController:vc1];
     UITableViewController *vc2 = [[LGZVoiceViewController alloc] init];
     [self addChildViewController:vc2];
-    UITableViewController *vc3 = [[LGZWordViewController alloc] init];
-    [self addChildViewController:vc3];
     UITableViewController *vc4 = [[LGZPictureViewController alloc] init];
     [self addChildViewController:vc4];
+    UITableViewController *vc3 = [[LGZWordViewController alloc] init];
+    [self addChildViewController:vc3];
+
 
 }
 
@@ -97,7 +98,7 @@
     
     // 设置内边距
     CGFloat top = CGRectGetMaxY(self.titlesView.frame);
-//    NSLog(@"%f------%f-----%f",top,vc.view.y,scrollView.y);
+
     CGFloat bottom = self.tabBarController.tabBar.height;
     vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
@@ -107,7 +108,7 @@
         
     self.selectedBtn.enabled = YES;
     UIButton *btn = (UIButton *)self.titlesView.subviews[index];
-//    NSLog(@"%zd-------%f-------%f",index,scrollView.contentOffset.x, self.view.width);
+    
     btn.enabled = NO;
     self.selectedBtn = btn;
 }

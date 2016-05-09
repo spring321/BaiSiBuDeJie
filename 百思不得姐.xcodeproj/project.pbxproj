@@ -46,6 +46,9 @@
 		18F8B0341CDF22A200D67638 /* LGZVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0331CDF22A200D67638 /* LGZVoiceViewController.m */; };
 		18F8B0371CDF22B200D67638 /* LGZPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0361CDF22B200D67638 /* LGZPictureViewController.m */; };
 		18F8B03A1CDF22C000D67638 /* LGZWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0391CDF22C000D67638 /* LGZWordViewController.m */; };
+		18F8B03D1CDF68C800D67638 /* LGZTopics.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B03C1CDF68C800D67638 /* LGZTopics.m */; };
+		18F8B0411CE06F3300D67638 /* LGZTopicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */; };
+		18F8B0421CE06F3300D67638 /* LGZTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +144,11 @@
 		18F8B0361CDF22B200D67638 /* LGZPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZPictureViewController.m; sourceTree = "<group>"; };
 		18F8B0381CDF22C000D67638 /* LGZWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZWordViewController.h; sourceTree = "<group>"; };
 		18F8B0391CDF22C000D67638 /* LGZWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZWordViewController.m; sourceTree = "<group>"; };
+		18F8B03B1CDF68C800D67638 /* LGZTopics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopics.h; sourceTree = "<group>"; };
+		18F8B03C1CDF68C800D67638 /* LGZTopics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopics.m; sourceTree = "<group>"; };
+		18F8B03E1CE06F3300D67638 /* LGZTopicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopicsCell.h; sourceTree = "<group>"; };
+		18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopicsCell.m; sourceTree = "<group>"; };
+		18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZTopicsCell.xib; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -219,6 +227,8 @@
 			children = (
 				181ED7AF1CDAEB9000D44CF0 /* LGZTagsModel.h */,
 				181ED7B01CDAEB9000D44CF0 /* LGZTagsModel.m */,
+				18F8B03B1CDF68C800D67638 /* LGZTopics.h */,
+				18F8B03C1CDF68C800D67638 /* LGZTopics.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -229,6 +239,9 @@
 				181ED7B21CDAEDE400D44CF0 /* LGZTagCell.h */,
 				181ED7B31CDAEDE400D44CF0 /* LGZTagCell.m */,
 				181ED7B41CDAEDE400D44CF0 /* LGZTagCell.xib */,
+				18F8B03E1CE06F3300D67638 /* LGZTopicsCell.h */,
+				18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */,
+				18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -591,6 +604,7 @@
 				18F8B02B1CDC3CD700D67638 /* LGZGuidePushView.xib in Resources */,
 				1894C3E01CD98E2D00641572 /* LGZFocusController.xib in Resources */,
 				1894C3DB1CD9882600641572 /* Podfile in Resources */,
+				18F8B0421CE06F3300D67638 /* LGZTopicsCell.xib in Resources */,
 				181ED7A31CD9A90E00D44CF0 /* LGZFocusCategoryCell.xib in Resources */,
 				181ED7B61CDAEDE400D44CF0 /* LGZTagCell.xib in Resources */,
 				189FD4F71CD883810022DFA9 /* Assets.xcassets in Resources */,
@@ -672,6 +686,7 @@
 				181ED7AE1CDAE75F00D44CF0 /* LGZTagTableViewController.m in Sources */,
 				181ED7A21CD9A90E00D44CF0 /* LGZFocusCategoryCell.m in Sources */,
 				181685E71CDB441F005197B3 /* LGZVLoginResginController.m in Sources */,
+				18F8B0411CE06F3300D67638 /* LGZTopicsCell.m in Sources */,
 				1894C3DF1CD98E2D00641572 /* LGZFocusController.m in Sources */,
 				181ED7B51CDAEDE400D44CF0 /* LGZTagCell.m in Sources */,
 				1894C3E31CD9A5D900641572 /* LGZFocusCategory.m in Sources */,
@@ -691,6 +706,7 @@
 				1894C3D71CD8F23900641572 /* LGZNavgationController.m in Sources */,
 				1894C3CB1CD8E54C00641572 /* LGZEssenceViewController.m in Sources */,
 				18F8B0341CDF22A200D67638 /* LGZVoiceViewController.m in Sources */,
+				18F8B03D1CDF68C800D67638 /* LGZTopics.m in Sources */,
 				181ED7B11CDAEB9000D44CF0 /* LGZTagsModel.m in Sources */,
 				181ED7A71CDA069D00D44CF0 /* LGZUserCell.m in Sources */,
 				1894C3CE1CD8E54C00641572 /* LGZNewViewController.m in Sources */,
