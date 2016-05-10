@@ -10,6 +10,7 @@
 #define PrefixHeader_pch
 #import "UIView+LGZExtension.h"
 #import "UIBarButtonItem+LGZExtension.h"
+#import "NSDate+LGZExtension.h"
 
 
 #ifdef DEBUG

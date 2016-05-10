@@ -141,7 +141,7 @@ static NSString * const ID = @"topicCell";
 #pragma mark - tableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 140;
+    return 180;
 }
 
 @end

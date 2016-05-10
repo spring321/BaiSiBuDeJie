@@ -49,6 +49,7 @@
 		18F8B03D1CDF68C800D67638 /* LGZTopics.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B03C1CDF68C800D67638 /* LGZTopics.m */; };
 		18F8B0411CE06F3300D67638 /* LGZTopicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */; };
 		18F8B0421CE06F3300D67638 /* LGZTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */; };
+		18F8B0451CE16AC600D67638 /* NSDate+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0441CE16AC600D67638 /* NSDate+LGZExtension.m */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,8 @@
 		18F8B03E1CE06F3300D67638 /* LGZTopicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopicsCell.h; sourceTree = "<group>"; };
 		18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopicsCell.m; sourceTree = "<group>"; };
 		18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZTopicsCell.xib; sourceTree = "<group>"; };
+		18F8B0431CE16AC600D67638 /* NSDate+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LGZExtension.h"; sourceTree = "<group>"; };
+		18F8B0441CE16AC600D67638 /* NSDate+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LGZExtension.m"; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -400,6 +403,8 @@
 				1894C3C31CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m */,
 				1894C3C41CD8E54C00641572 /* UIView+LGZExtension.h */,
 				1894C3C51CD8E54C00641572 /* UIView+LGZExtension.m */,
+				18F8B0431CE16AC600D67638 /* NSDate+LGZExtension.h */,
+				18F8B0441CE16AC600D67638 /* NSDate+LGZExtension.m */,
 			);
 			path = "Category - 类扩展";
 			sourceTree = "<group>";
@@ -704,6 +709,7 @@
 				1894C3CD1CD8E54C00641572 /* LGZMeViewController.m in Sources */,
 				18F8B0311CDF229500D67638 /* LGZVideoViewController.m in Sources */,
 				1894C3D71CD8F23900641572 /* LGZNavgationController.m in Sources */,
+				18F8B0451CE16AC600D67638 /* NSDate+LGZExtension.m in Sources */,
 				1894C3CB1CD8E54C00641572 /* LGZEssenceViewController.m in Sources */,
 				18F8B0341CDF22A200D67638 /* LGZVoiceViewController.m in Sources */,
 				18F8B03D1CDF68C800D67638 /* LGZTopics.m in Sources */,

@@ -22,14 +22,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk2-pk-qNL">
-                        <rect key="frame" x="55" y="10" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="55" y="10" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-n2-iCR">
-                        <rect key="frame" x="55" y="29" width="33" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="55" y="31.5" width="28.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -80,7 +80,7 @@
                                 <state key="highlighted" image="mainCellShareClick"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLf-eI-tKS">
-                                <rect key="frame" x="239.5" y="0.0" width="79.5" height="44"/>
+                                <rect key="frame" x="239" y="0.0" width="79.5" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="542" image="mainCellComment">
@@ -101,7 +101,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-button-line" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-w8-uSd">
-                                <rect key="frame" x="239.5" y="0.0" width="1" height="44"/>
+                                <rect key="frame" x="239" y="0.0" width="1" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="tO5-BQ-MKY"/>
                                 </constraints>
@@ -155,6 +155,15 @@
                     <constraint firstItem="Lho-4a-lkX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u9Y-br-Uvd"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cai" destination="hXv-xZ-3gJ" id="LpP-Vg-vZa"/>
+                <outlet property="comment" destination="FLf-eI-tKS" id="4OR-G8-W0f"/>
+                <outlet property="created_at" destination="mYl-n2-iCR" id="UEn-RC-nWD"/>
+                <outlet property="ding" destination="IJo-Je-vw3" id="DcP-fa-DA3"/>
+                <outlet property="profile_image" destination="PgY-qY-doe" id="1Vv-l5-tqd"/>
+                <outlet property="screen_name" destination="Nk2-pk-qNL" id="uUP-O3-8zb"/>
+                <outlet property="share" destination="cyl-b1-a9M" id="Uo6-fP-GIc"/>
+            </connections>
             <point key="canvasLocation" x="180.5" y="276"/>
         </tableViewCell>
     </objects>

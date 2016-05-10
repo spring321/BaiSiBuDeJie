@@ -23,7 +23,7 @@
 /** cai */
 @property (nonatomic, assign) NSInteger cai;
 /** 转发数 */
-@property (nonatomic, assign) NSInteger forward;
+@property (nonatomic, assign) NSInteger repost;
 /** 讨论 */
 @property (nonatomic, assign) NSInteger comment;
 
