@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-n2-iCR">
-                        <rect key="frame" x="55" y="31.5" width="28.5" height="13.5"/>
+                        <rect key="frame" x="55" y="31" width="28.5" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -140,19 +140,37 @@
                             <constraint firstAttribute="bottom" secondItem="7Pi-4a-zgp" secondAttribute="bottom" id="taa-0h-9dU"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_AddV_authen" translatesAutoresizingMaskIntoConstraints="NO" id="vUm-0U-MHu">
+                        <rect key="frame" x="37" y="37" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="DLS-dj-jh3"/>
+                            <constraint firstAttribute="width" constant="13" id="T3Z-th-zH5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr3-cl-w2j">
+                        <rect key="frame" x="10" y="55" width="299" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Jr3-cl-w2j" firstAttribute="leading" secondItem="PgY-qY-doe" secondAttribute="leading" id="2sK-8K-ca2"/>
+                    <constraint firstItem="Jr3-cl-w2j" firstAttribute="top" secondItem="PgY-qY-doe" secondAttribute="bottom" constant="10" id="9yk-JU-ApT"/>
                     <constraint firstAttribute="trailing" secondItem="OTZ-AB-fQm" secondAttribute="trailing" constant="10" id="I3y-gt-xH4"/>
                     <constraint firstItem="mYl-n2-iCR" firstAttribute="leading" secondItem="PgY-qY-doe" secondAttribute="trailing" constant="10" id="JAk-MA-A9j"/>
                     <constraint firstItem="Nk2-pk-qNL" firstAttribute="top" secondItem="PgY-qY-doe" secondAttribute="top" id="MLB-t8-47V"/>
                     <constraint firstItem="PgY-qY-doe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="R8D-Mm-y1Y"/>
                     <constraint firstItem="OTZ-AB-fQm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RdW-W1-nuB"/>
                     <constraint firstItem="PgY-qY-doe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VnX-Zl-Dcl"/>
+                    <constraint firstItem="Jr3-cl-w2j" firstAttribute="trailing" secondItem="OTZ-AB-fQm" secondAttribute="trailing" id="g9R-vY-X1S"/>
                     <constraint firstItem="mYl-n2-iCR" firstAttribute="bottom" secondItem="PgY-qY-doe" secondAttribute="bottom" id="npn-bA-tWx"/>
+                    <constraint firstItem="vUm-0U-MHu" firstAttribute="bottom" secondItem="PgY-qY-doe" secondAttribute="bottom" constant="5" id="oLx-1J-uEK"/>
                     <constraint firstAttribute="bottom" secondItem="Lho-4a-lkX" secondAttribute="bottom" id="qkH-0q-sYa"/>
                     <constraint firstAttribute="trailing" secondItem="Lho-4a-lkX" secondAttribute="trailing" id="qlq-Vh-80p"/>
                     <constraint firstItem="Nk2-pk-qNL" firstAttribute="leading" secondItem="PgY-qY-doe" secondAttribute="trailing" constant="10" id="ssH-kP-P0O"/>
                     <constraint firstItem="Lho-4a-lkX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u9Y-br-Uvd"/>
+                    <constraint firstItem="vUm-0U-MHu" firstAttribute="trailing" secondItem="PgY-qY-doe" secondAttribute="trailing" constant="5" id="xUW-aP-tLV"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -163,11 +181,14 @@
                 <outlet property="profile_image" destination="PgY-qY-doe" id="1Vv-l5-tqd"/>
                 <outlet property="screen_name" destination="Nk2-pk-qNL" id="uUP-O3-8zb"/>
                 <outlet property="share" destination="cyl-b1-a9M" id="Uo6-fP-GIc"/>
+                <outlet property="sina_v_image" destination="vUm-0U-MHu" id="xFU-xo-tUt"/>
+                <outlet property="text_label" destination="Jr3-cl-w2j" id="m0n-i5-ekP"/>
             </connections>
             <point key="canvasLocation" x="180.5" y="276"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Profile_AddV_authen" width="14" height="14"/>
         <image name="cell-button-line" width="1" height="29"/>
         <image name="cell-content-line" width="299" height="1"/>
         <image name="cellFollowClickIcon" width="19" height="20"/>

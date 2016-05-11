@@ -50,6 +50,11 @@
 		18F8B0411CE06F3300D67638 /* LGZTopicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */; };
 		18F8B0421CE06F3300D67638 /* LGZTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */; };
 		18F8B0451CE16AC600D67638 /* NSDate+LGZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0441CE16AC600D67638 /* NSDate+LGZExtension.m */; };
+		18F8B0481CE1C7CD00D67638 /* LGZBaseTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0471CE1C7CD00D67638 /* LGZBaseTopicsViewController.m */; };
+		18F8B04B1CE2FB1100D67638 /* LGZTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B04A1CE2FB1100D67638 /* LGZTopicPictureView.m */; };
+		18F8B04D1CE2FB2000D67638 /* LGZTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B04C1CE2FB2000D67638 /* LGZTopicPictureView.xib */; };
+		18F8B0511CE3502700D67638 /* LGZShowPictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B04F1CE3502700D67638 /* LGZShowPictureController.m */; };
+		18F8B0521CE3502700D67638 /* LGZShowPictureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0501CE3502700D67638 /* LGZShowPictureController.xib */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +157,14 @@
 		18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZTopicsCell.xib; sourceTree = "<group>"; };
 		18F8B0431CE16AC600D67638 /* NSDate+LGZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LGZExtension.h"; sourceTree = "<group>"; };
 		18F8B0441CE16AC600D67638 /* NSDate+LGZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LGZExtension.m"; sourceTree = "<group>"; };
+		18F8B0461CE1C7CD00D67638 /* LGZBaseTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZBaseTopicsViewController.h; sourceTree = "<group>"; };
+		18F8B0471CE1C7CD00D67638 /* LGZBaseTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZBaseTopicsViewController.m; sourceTree = "<group>"; };
+		18F8B0491CE2FB1100D67638 /* LGZTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopicPictureView.h; sourceTree = "<group>"; };
+		18F8B04A1CE2FB1100D67638 /* LGZTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopicPictureView.m; sourceTree = "<group>"; };
+		18F8B04C1CE2FB2000D67638 /* LGZTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZTopicPictureView.xib; sourceTree = "<group>"; };
+		18F8B04E1CE3502700D67638 /* LGZShowPictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZShowPictureController.h; sourceTree = "<group>"; };
+		18F8B04F1CE3502700D67638 /* LGZShowPictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZShowPictureController.m; sourceTree = "<group>"; };
+		18F8B0501CE3502700D67638 /* LGZShowPictureController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZShowPictureController.xib; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,6 +234,11 @@
 				18F8B0361CDF22B200D67638 /* LGZPictureViewController.m */,
 				18F8B0381CDF22C000D67638 /* LGZWordViewController.h */,
 				18F8B0391CDF22C000D67638 /* LGZWordViewController.m */,
+				18F8B0461CE1C7CD00D67638 /* LGZBaseTopicsViewController.h */,
+				18F8B0471CE1C7CD00D67638 /* LGZBaseTopicsViewController.m */,
+				18F8B04E1CE3502700D67638 /* LGZShowPictureController.h */,
+				18F8B04F1CE3502700D67638 /* LGZShowPictureController.m */,
+				18F8B0501CE3502700D67638 /* LGZShowPictureController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -245,6 +263,9 @@
 				18F8B03E1CE06F3300D67638 /* LGZTopicsCell.h */,
 				18F8B03F1CE06F3300D67638 /* LGZTopicsCell.m */,
 				18F8B0401CE06F3300D67638 /* LGZTopicsCell.xib */,
+				18F8B0491CE2FB1100D67638 /* LGZTopicPictureView.h */,
+				18F8B04A1CE2FB1100D67638 /* LGZTopicPictureView.m */,
+				18F8B04C1CE2FB2000D67638 /* LGZTopicPictureView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -609,6 +630,7 @@
 				18F8B02B1CDC3CD700D67638 /* LGZGuidePushView.xib in Resources */,
 				1894C3E01CD98E2D00641572 /* LGZFocusController.xib in Resources */,
 				1894C3DB1CD9882600641572 /* Podfile in Resources */,
+				18F8B0521CE3502700D67638 /* LGZShowPictureController.xib in Resources */,
 				18F8B0421CE06F3300D67638 /* LGZTopicsCell.xib in Resources */,
 				181ED7A31CD9A90E00D44CF0 /* LGZFocusCategoryCell.xib in Resources */,
 				181ED7B61CDAEDE400D44CF0 /* LGZTagCell.xib in Resources */,
@@ -616,6 +638,7 @@
 				181ED7A81CDA069D00D44CF0 /* LGZUserCell.xib in Resources */,
 				181685E81CDB441F005197B3 /* LGZVLoginResginController.xib in Resources */,
 				1894C3D91CD9849C00641572 /* LGZFriendTrendsViewController.xib in Resources */,
+				18F8B04D1CE2FB2000D67638 /* LGZTopicPictureView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +718,7 @@
 				1894C3DF1CD98E2D00641572 /* LGZFocusController.m in Sources */,
 				181ED7B51CDAEDE400D44CF0 /* LGZTagCell.m in Sources */,
 				1894C3E31CD9A5D900641572 /* LGZFocusCategory.m in Sources */,
+				18F8B04B1CE2FB1100D67638 /* LGZTopicPictureView.m in Sources */,
 				1894C3D11CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m in Sources */,
 				1894C3CC1CD8E54C00641572 /* LGZFriendTrendsViewController.m in Sources */,
 				181685EB1CDB4AE7005197B3 /* LGZOtherLoginButton.m in Sources */,
@@ -705,6 +729,7 @@
 				18F8B0261CDB894800D67638 /* LGZWhitePlaceholderFiled.m in Sources */,
 				181ED7AB1CDA0A7400D44CF0 /* LGZUserModel.m in Sources */,
 				1894C3D41CD8E54C00641572 /* LGZTabBar.m in Sources */,
+				18F8B0481CE1C7CD00D67638 /* LGZBaseTopicsViewController.m in Sources */,
 				18F8B02E1CDF227700D67638 /* LGZAllViewController.m in Sources */,
 				1894C3CD1CD8E54C00641572 /* LGZMeViewController.m in Sources */,
 				18F8B0311CDF229500D67638 /* LGZVideoViewController.m in Sources */,
@@ -717,6 +742,7 @@
 				181ED7A71CDA069D00D44CF0 /* LGZUserCell.m in Sources */,
 				1894C3CE1CD8E54C00641572 /* LGZNewViewController.m in Sources */,
 				1894C3D21CD8E54C00641572 /* UIView+LGZExtension.m in Sources */,
+				18F8B0511CE3502700D67638 /* LGZShowPictureController.m in Sources */,
 				1894C3D31CD8E54C00641572 /* main.m in Sources */,
 				1894C3CF1CD8E54C00641572 /* AppDelegate.m in Sources */,
 			);

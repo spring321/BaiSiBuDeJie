@@ -8,11 +8,7 @@
 
 #import "LGZEssenceViewController.h"
 #import "LGZTagTableViewController.h"
-#import "LGZAllViewController.h"
-#import "LGZVideoViewController.h"
-#import "LGZVoiceViewController.h"
-#import "LGZWordViewController.h"
-#import "LGZPictureViewController.h"
+#import "LGZBaseTopicsViewController.h"
 
 @interface LGZEssenceViewController () <UIScrollViewDelegate>
 /** 底部指示器 */
@@ -54,16 +50,26 @@
 // 设置子控制器
 - (void)setChildViewController
 {
-    UITableViewController *vc0 = [[LGZAllViewController alloc] init];
+    LGZBaseTopicsViewController *vc0 = [[LGZBaseTopicsViewController alloc] init];
+    vc0.title = @"全部";
+    vc0.type = LGZTopicTypeAll;
     [self addChildViewController:vc0];
-    UITableViewController *vc1 = [[LGZVideoViewController alloc] init];
+    LGZBaseTopicsViewController *vc1 = [[LGZBaseTopicsViewController alloc] init];
+    vc1.title = @"视频";
+    vc1.type = LGZTopicTypeVideo;
     [self addChildViewController:vc1];
-    UITableViewController *vc2 = [[LGZVoiceViewController alloc] init];
+    LGZBaseTopicsViewController *vc2 = [[LGZBaseTopicsViewController alloc] init];
+    vc2.title = @"声音";
+    vc2.type = LGZTopicTypeVoice;
     [self addChildViewController:vc2];
-    UITableViewController *vc4 = [[LGZPictureViewController alloc] init];
-    [self addChildViewController:vc4];
-    UITableViewController *vc3 = [[LGZWordViewController alloc] init];
+    LGZBaseTopicsViewController *vc3 = [[LGZBaseTopicsViewController alloc] init];
+    vc3.title = @"图片";
+    vc3.type = LGZTopicTypePicture;
     [self addChildViewController:vc3];
+    LGZBaseTopicsViewController *vc4 = [[LGZBaseTopicsViewController alloc] init];
+    vc4.title = @"段子";
+    vc4.type = LGZTopicTypeWord;
+    [self addChildViewController:vc4];
 
 
 }
@@ -133,15 +139,14 @@
     self.titlesView = titlesView;
     
     // 设置指示器标签
-    NSArray *titleBtns = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
-    for (NSInteger i = 0; i < titleBtns.count; i++) {
+    for (NSInteger i = 0; i < self.childViewControllers.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.width = titlesView.width / titleBtns.count;
+        btn.width = titlesView.width / self.childViewControllers.count;
         btn.height = titlesView.height;
         btn.y = 0;
         btn.x = i * btn.width;
         btn.tag = i;
-        [btn setTitle:titleBtns[i] forState:UIControlStateNormal];
+        [btn setTitle:self.childViewControllers[i].title forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
 

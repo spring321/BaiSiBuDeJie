@@ -9,6 +9,7 @@
 #import "LGZTopicsCell.h"
 #import "LGZTopics.h"
 #import <UIImageView+WebCache.h>
+#import "LGZTopicPictureView.h"
 @interface LGZTopicsCell()
 @property (strong, nonatomic) IBOutlet UIImageView *profile_image;
 @property (strong, nonatomic) IBOutlet UILabel *screen_name;
@@ -17,24 +18,54 @@
 @property (strong, nonatomic) IBOutlet UIButton *cai;
 @property (strong, nonatomic) IBOutlet UIButton *share;
 @property (strong, nonatomic) IBOutlet UIButton *comment;
+@property (strong, nonatomic) IBOutlet UIImageView *sina_v_image;
+@property (strong, nonatomic) IBOutlet UILabel *text_label;
+//** 中间的view */
+@property (nonatomic, strong) LGZTopicPictureView *pictureView;
 
 @end
 
 
 @implementation LGZTopicsCell
 
+- (UIView *)pictureView
+{
+    if (!_pictureView){
+        LGZTopicPictureView *pictureView = [LGZTopicPictureView topicPictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     UIImageView *bgView = [[UIImageView alloc] init];
     bgView.image = [UIImage imageNamed:@"mainCellBackground"];
 //    [bgView setImage:[UIImage imageNamed:@"mainCellBackground"]];
+////    self.backgroundView = bgView;
+//    NSInteger left = bgView.image.size.width * 0.5f;
+//    NSInteger top = bgView.image.size.height * 0.5f;
+//    bgView.image = [bgView.image stretchableImageWithLeftCapWidth:left topCapHeight:top];
+    CGFloat top = 25; // 顶端盖高度
+    CGFloat bottom = 25 ; // 底端盖高度
+    CGFloat left = 10; // 左端盖宽度
+    CGFloat right = 10; // 右端盖宽度
+    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+    // 指定为拉伸模式，伸缩后重新赋值
+    bgView.image = [bgView.image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeTile];
     self.backgroundView = bgView;
+    
 }
+
+
 
 // 设置模型数据
 - (void)setTopic:(LGZTopics *)topic
 {
     _topic = topic;
+    
+//    topic.sina_v = arc4random_uniform(100) % 2;
     
     // 设置用户头像
     [self.profile_image sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]];
@@ -44,6 +75,20 @@
 //    self.created_at.text = topic.created_at;
     // 设置发帖时间
     [self setTimeFrom:topic.created_at];
+    
+    // 设置头像是否加v
+    self.sina_v_image.hidden = !topic.isSina_v;
+    
+    // 设置文字内容
+    self.text_label.text = topic.text;
+    
+    // 将中间的内容加入cell中
+    if (topic.type != 29)
+    {
+    self.pictureView.frame = CGRectMake(0, self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        self.pictureView.topic = topic;
+    }
+
     
     // 设置按钮
     [self setButton:self.ding count:topic.love placeholder:@"顶"];

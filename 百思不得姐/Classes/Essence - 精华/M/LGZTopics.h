@@ -26,5 +26,28 @@
 @property (nonatomic, assign) NSInteger repost;
 /** 讨论 */
 @property (nonatomic, assign) NSInteger comment;
+/** 是否为sina_v */
+@property (nonatomic, assign, getter=isSina_v) BOOL *sina_v;
+/** 图片的宽度 */
+@property (nonatomic, assign) CGFloat width;
+/** 图片的高度 */
+@property (nonatomic, assign) CGFloat height;
+/** 小图片的url */
+@property (nonatomic, copy) NSString *smallImage;
+/** 大图片的url */
+@property (nonatomic, copy) NSString *largeImage;
+/** 中图片的url */
+@property (nonatomic, copy) NSString *middleImage;
+/** 返回类型 */
+@property (nonatomic, assign) NSInteger type;
+
+/***********额外的属性*************/
+/** cell的高度 */
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
+/** 图片的高度 */
+@property (nonatomic, assign) CGFloat imageHeight;
+
+/** 是否为处理过的图片 */
+@property (nonatomic, assign, getter=isBigView) BOOL bigView;
 
 @end
