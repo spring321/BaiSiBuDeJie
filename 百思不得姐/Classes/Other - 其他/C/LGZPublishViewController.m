@@ -8,6 +8,7 @@
 
 #import "LGZPublishViewController.h"
 #import "LGZOtherLoginButton.h"
+#import <POP.h>
 
 @interface LGZPublishViewController ()
 
@@ -18,11 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 背景文字
-    UIImageView *topImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
-    topImage.y = [UIScreen mainScreen].bounds.size.height * 0.12;
-    topImage.centerX = [UIScreen mainScreen].bounds.size.width * 0.5;
-    [self.view addSubview:topImage];
     
     // 数据
     NSArray *images = @[@"publish-video", @"publish-picture", @"publish-text", @"publish-audio", @"publish-review", @"publish-offline"];
@@ -45,14 +41,82 @@
         
         // 列号
         int col = i % 3;
-        button.x = startX + (buttonW + marginX) * col;
-        button.y = startY + (buttonH) * row;
-        button.width = buttonW;
-        button.height = buttonH;
+        CGFloat buttonX = startX + (buttonW + marginX) * col;
+        CGFloat buttonY = startY + (buttonH) * row;
+//        button.width = buttonW;
+//        button.height = buttonH;
+        button.tag = i;
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
+        POPSpringAnimation *anim= [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
+        anim.fromValue = [NSValue valueWithCGRect:CGRectMake(buttonX, button.height - [UIScreen mainScreen].bounds.size.height, buttonW, buttonH)];
+        anim.toValue = [NSValue valueWithCGRect:CGRectMake(buttonX,buttonY, buttonW, buttonH)];
+        
+        // 设置开始时间
+        anim.beginTime = CACurrentMediaTime() + 0.1 * i;
+        
+        // 设置弹簧效果
+        anim.springBounciness = 10;
+        anim.springSpeed = 14;
+        
+        [button pop_addAnimation:anim forKey:nil];
+    }
+    // 背景文字
+    UIImageView *topImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
+    topImage.centerY = -topImage.height;
+    CGFloat centerY = [UIScreen mainScreen].bounds.size.height * 0.12;
+    CGFloat centerX = [UIScreen mainScreen].bounds.size.width * 0.5;
+    // 设置动画效果
+    POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+    anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(centerX, -100)];
+    anim.toValue = [NSValue valueWithCGPoint:CGPointMake(centerX, centerY)];
+    anim.beginTime = CACurrentMediaTime() + 0.1 * 7;
+    // 设置弹簧效果
+    anim.springBounciness = 10;
+    anim.springSpeed = 14;
+
+    
+    [topImage pop_addAnimation:anim forKey:nil];
+    [self.view addSubview:topImage];
+
+    
+
+}
+
+- (void)cancelWithBlock:(void (^)())completionBlock{
+    self.view.userInteractionEnabled = NO;
+    for (int i = 2; i < self.view.subviews.count; i++) {
+        UIView *subView = self.view.subviews[i];
+        
+        POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        anim.toValue = [NSValue valueWithCGPoint:CGPointMake(subView.centerX, [UIScreen mainScreen].bounds.size.height + subView.centerY)];
+        anim.beginTime = CACurrentMediaTime() + 0.1 * (i - 2);
+        
+        [subView pop_addAnimation:anim forKey:nil];
+        if (i == (self.view.subviews.count - 1)){
+            [anim setCompletionBlock:^(POPAnimation *anim, BOOL finisher) {
+                //                self.view.userInteractionEnabled = YES;
+                [self dismissViewControllerAnimated:NO completion:nil];
+                if (completionBlock){
+                    completionBlock();
+                }else{
+                    return ;
+                }
+            }];
+        }
+        
     }
     
 
+}
+
+- (void)buttonClick:(UIButton *)button
+{
+    [self cancelWithBlock:^{
+        if (button.tag == 0){
+        }
+
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,9 +124,12 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)dismiss:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self cancelWithBlock:nil];
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self dismiss:nil];
+}
 /*
 #pragma mark - Navigation
 
