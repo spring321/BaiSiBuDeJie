@@ -17,10 +17,22 @@
     // Drawing code
 }
 */
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]){
+        [self setUp];
+    }
+    return self;
+}
+
 - (void)awakeFromNib
 {
-//    self.backgroundColor = [UIColor redColor];
+    [self setUp];
+}
+
+- (void)setUp{
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "LGZTabBar.h"
+#import "LGZPublishViewController.h"
 
 @interface LGZTabBar()
 /** 发布按钮 */
@@ -21,11 +22,18 @@
         UIButton *publishButton = [[UIButton alloc] init];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];
+        [publishButton addTarget:self action:@selector(publishView) forControlEvents:UIControlEventTouchUpInside];
+        
         self.publishButton = publishButton;
         [self addSubview:self.publishButton];
     }
     
     return self;
+}
+
+- (void)publishView{
+    LGZPublishViewController *vc = [[LGZPublishViewController alloc] init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
 }
 
 - (void)layoutSubviews

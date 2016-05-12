@@ -55,6 +55,8 @@
 		18F8B04D1CE2FB2000D67638 /* LGZTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B04C1CE2FB2000D67638 /* LGZTopicPictureView.xib */; };
 		18F8B0511CE3502700D67638 /* LGZShowPictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B04F1CE3502700D67638 /* LGZShowPictureController.m */; };
 		18F8B0521CE3502700D67638 /* LGZShowPictureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0501CE3502700D67638 /* LGZShowPictureController.xib */; };
+		18F8B0561CE4189900D67638 /* LGZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0541CE4189900D67638 /* LGZPublishViewController.m */; };
+		18F8B0571CE4189900D67638 /* LGZPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0551CE4189900D67638 /* LGZPublishViewController.xib */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +167,9 @@
 		18F8B04E1CE3502700D67638 /* LGZShowPictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZShowPictureController.h; sourceTree = "<group>"; };
 		18F8B04F1CE3502700D67638 /* LGZShowPictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZShowPictureController.m; sourceTree = "<group>"; };
 		18F8B0501CE3502700D67638 /* LGZShowPictureController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZShowPictureController.xib; sourceTree = "<group>"; };
+		18F8B0531CE4189900D67638 /* LGZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZPublishViewController.h; sourceTree = "<group>"; };
+		18F8B0541CE4189900D67638 /* LGZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZPublishViewController.m; sourceTree = "<group>"; };
+		18F8B0551CE4189900D67638 /* LGZPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZPublishViewController.xib; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -413,6 +418,9 @@
 				1894C3C01CD8E54C00641572 /* LGZTabBarController.m */,
 				1894C3D51CD8F23900641572 /* LGZNavgationController.h */,
 				1894C3D61CD8F23900641572 /* LGZNavgationController.m */,
+				18F8B0531CE4189900D67638 /* LGZPublishViewController.h */,
+				18F8B0541CE4189900D67638 /* LGZPublishViewController.m */,
+				18F8B0551CE4189900D67638 /* LGZPublishViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -628,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F8B02B1CDC3CD700D67638 /* LGZGuidePushView.xib in Resources */,
+				18F8B0571CE4189900D67638 /* LGZPublishViewController.xib in Resources */,
 				1894C3E01CD98E2D00641572 /* LGZFocusController.xib in Resources */,
 				1894C3DB1CD9882600641572 /* Podfile in Resources */,
 				18F8B0521CE3502700D67638 /* LGZShowPictureController.xib in Resources */,
@@ -737,6 +746,7 @@
 				18F8B0451CE16AC600D67638 /* NSDate+LGZExtension.m in Sources */,
 				1894C3CB1CD8E54C00641572 /* LGZEssenceViewController.m in Sources */,
 				18F8B0341CDF22A200D67638 /* LGZVoiceViewController.m in Sources */,
+				18F8B0561CE4189900D67638 /* LGZPublishViewController.m in Sources */,
 				18F8B03D1CDF68C800D67638 /* LGZTopics.m in Sources */,
 				181ED7B11CDAEB9000D44CF0 /* LGZTagsModel.m in Sources */,
 				181ED7A71CDA069D00D44CF0 /* LGZUserCell.m in Sources */,

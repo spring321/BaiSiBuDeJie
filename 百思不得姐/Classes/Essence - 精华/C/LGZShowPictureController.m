@@ -10,11 +10,13 @@
 #import "LGZTopics.h"
 #import <UIImageView+WebCache.h>
 #import <SVProgressHUD.h>
+#import <DALabeledCircularProgressView.h>
 
 @interface LGZShowPictureController ()
 @property (strong, nonatomic) IBOutlet UIScrollView *bigScrollView;
 /** image */
 @property (nonatomic, strong) UIImageView *bigImageView;
+@property (strong, nonatomic) IBOutlet DALabeledCircularProgressView *progerssView;
 
 @end
 
@@ -23,7 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImageView *bigImageView = [[UIImageView alloc] init];
-    [bigImageView sd_setImageWithURL:[NSURL URLWithString:self.topic.largeImage]];
+    [bigImageView sd_setImageWithURL:[NSURL URLWithString:self.topic.largeImage] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        CGFloat progress = 1.0 * receivedSize / expectedSize;
+        [self.progerssView setProgress:progress];
+        self.progerssView.progressLabel.text = [NSString stringWithFormat:@"%.0f%%",progress * 100];
+        self.progerssView.hidden = NO;
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.progerssView.hidden = YES;
+    }];
     
     CGFloat bigImageWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat bigImageHeight = bigImageWidth * self.topic.height / self.topic.width;
