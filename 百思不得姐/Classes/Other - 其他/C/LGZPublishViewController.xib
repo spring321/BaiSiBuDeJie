@@ -33,14 +33,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="X97-nT-tpP" secondAttribute="trailing" id="REA-8b-uTo"/>
+                <constraint firstAttribute="trailing" secondItem="X97-nT-tpP" secondAttribute="trailing" id="Pzi-K5-aok"/>
                 <constraint firstAttribute="bottom" secondItem="tmr-5J-SiT" secondAttribute="bottom" constant="15" id="RnO-A4-79y"/>
-                <constraint firstAttribute="bottom" secondItem="X97-nT-tpP" secondAttribute="bottom" id="cTU-SU-FTr"/>
+                <constraint firstItem="X97-nT-tpP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W17-UX-dlM"/>
+                <constraint firstAttribute="bottom" secondItem="X97-nT-tpP" secondAttribute="bottom" id="b2O-st-RfO"/>
+                <constraint firstItem="X97-nT-tpP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hdk-py-xds"/>
                 <constraint firstItem="tmr-5J-SiT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kXG-Mf-Ooj"/>
-                <constraint firstItem="X97-nT-tpP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z9t-uM-QeY"/>
-                <constraint firstItem="X97-nT-tpP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zeM-eM-C99"/>
             </constraints>
-            <point key="canvasLocation" x="445" y="363"/>
+            <point key="canvasLocation" x="546" y="357"/>
         </view>
     </objects>
     <resources>

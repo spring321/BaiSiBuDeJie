@@ -57,6 +57,10 @@
 		18F8B0521CE3502700D67638 /* LGZShowPictureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0501CE3502700D67638 /* LGZShowPictureController.xib */; };
 		18F8B0561CE4189900D67638 /* LGZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0541CE4189900D67638 /* LGZPublishViewController.m */; };
 		18F8B0571CE4189900D67638 /* LGZPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0551CE4189900D67638 /* LGZPublishViewController.xib */; };
+		18F8B05A1CE55AA200D67638 /* LGZTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0591CE55AA200D67638 /* LGZTopicVoiceView.m */; };
+		18F8B05C1CE55AB300D67638 /* LGZTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B05B1CE55AB300D67638 /* LGZTopicVoiceView.xib */; };
+		18F8B05F1CE56AA900D67638 /* LGZTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B05E1CE56AA900D67638 /* LGZTopicVideoView.m */; };
+		18F8B0611CE56ABC00D67638 /* LGZTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B0601CE56ABC00D67638 /* LGZTopicVideoView.xib */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +174,12 @@
 		18F8B0531CE4189900D67638 /* LGZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZPublishViewController.h; sourceTree = "<group>"; };
 		18F8B0541CE4189900D67638 /* LGZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZPublishViewController.m; sourceTree = "<group>"; };
 		18F8B0551CE4189900D67638 /* LGZPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZPublishViewController.xib; sourceTree = "<group>"; };
+		18F8B0581CE55AA200D67638 /* LGZTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopicVoiceView.h; sourceTree = "<group>"; };
+		18F8B0591CE55AA200D67638 /* LGZTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopicVoiceView.m; sourceTree = "<group>"; };
+		18F8B05B1CE55AB300D67638 /* LGZTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZTopicVoiceView.xib; sourceTree = "<group>"; };
+		18F8B05D1CE56AA900D67638 /* LGZTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopicVideoView.h; sourceTree = "<group>"; };
+		18F8B05E1CE56AA900D67638 /* LGZTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopicVideoView.m; sourceTree = "<group>"; };
+		18F8B0601CE56ABC00D67638 /* LGZTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZTopicVideoView.xib; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -271,6 +281,12 @@
 				18F8B0491CE2FB1100D67638 /* LGZTopicPictureView.h */,
 				18F8B04A1CE2FB1100D67638 /* LGZTopicPictureView.m */,
 				18F8B04C1CE2FB2000D67638 /* LGZTopicPictureView.xib */,
+				18F8B0581CE55AA200D67638 /* LGZTopicVoiceView.h */,
+				18F8B0591CE55AA200D67638 /* LGZTopicVoiceView.m */,
+				18F8B05B1CE55AB300D67638 /* LGZTopicVoiceView.xib */,
+				18F8B05D1CE56AA900D67638 /* LGZTopicVideoView.h */,
+				18F8B05E1CE56AA900D67638 /* LGZTopicVideoView.m */,
+				18F8B0601CE56ABC00D67638 /* LGZTopicVideoView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -642,11 +658,13 @@
 				18F8B0521CE3502700D67638 /* LGZShowPictureController.xib in Resources */,
 				18F8B0421CE06F3300D67638 /* LGZTopicsCell.xib in Resources */,
 				181ED7A31CD9A90E00D44CF0 /* LGZFocusCategoryCell.xib in Resources */,
+				18F8B05C1CE55AB300D67638 /* LGZTopicVoiceView.xib in Resources */,
 				181ED7B61CDAEDE400D44CF0 /* LGZTagCell.xib in Resources */,
 				189FD4F71CD883810022DFA9 /* Assets.xcassets in Resources */,
 				181ED7A81CDA069D00D44CF0 /* LGZUserCell.xib in Resources */,
 				181685E81CDB441F005197B3 /* LGZVLoginResginController.xib in Resources */,
 				1894C3D91CD9849C00641572 /* LGZFriendTrendsViewController.xib in Resources */,
+				18F8B0611CE56ABC00D67638 /* LGZTopicVideoView.xib in Resources */,
 				18F8B04D1CE2FB2000D67638 /* LGZTopicPictureView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,6 +759,7 @@
 				18F8B0481CE1C7CD00D67638 /* LGZBaseTopicsViewController.m in Sources */,
 				18F8B02E1CDF227700D67638 /* LGZAllViewController.m in Sources */,
 				1894C3CD1CD8E54C00641572 /* LGZMeViewController.m in Sources */,
+				18F8B05F1CE56AA900D67638 /* LGZTopicVideoView.m in Sources */,
 				18F8B0311CDF229500D67638 /* LGZVideoViewController.m in Sources */,
 				1894C3D71CD8F23900641572 /* LGZNavgationController.m in Sources */,
 				18F8B0451CE16AC600D67638 /* NSDate+LGZExtension.m in Sources */,
@@ -755,6 +774,7 @@
 				18F8B0511CE3502700D67638 /* LGZShowPictureController.m in Sources */,
 				1894C3D31CD8E54C00641572 /* main.m in Sources */,
 				1894C3CF1CD8E54C00641572 /* AppDelegate.m in Sources */,
+				18F8B05A1CE55AA200D67638 /* LGZTopicVoiceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

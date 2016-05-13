@@ -10,6 +10,8 @@
 #import "LGZTopics.h"
 #import <UIImageView+WebCache.h>
 #import "LGZTopicPictureView.h"
+#import "LGZTopicVoiceView.h"
+#import "LGZTopicVideoView.h"
 @interface LGZTopicsCell()
 @property (strong, nonatomic) IBOutlet UIImageView *profile_image;
 @property (strong, nonatomic) IBOutlet UILabel *screen_name;
@@ -22,6 +24,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *text_label;
 //** 中间的view */
 @property (nonatomic, strong) LGZTopicPictureView *pictureView;
+//** 中间的view */
+@property (nonatomic, strong) LGZTopicVoiceView *voiceView;
+//** 中间的view */
+@property (nonatomic, strong) LGZTopicVideoView *videoView;
 
 @end
 
@@ -38,15 +44,35 @@
     return _pictureView;
 }
 
+- (UIView *)voiceView
+{
+    if (!_voiceView){
+        LGZTopicVoiceView *voiceView = [LGZTopicVoiceView topicVoiceView];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
+    }
+    return _voiceView;
+}
+
+- (UIView *)videoView
+{
+    if (!_videoView){
+        LGZTopicVideoView *videoView = [LGZTopicVideoView topicVideoView];
+        [self.contentView addSubview:videoView];
+        _videoView = videoView;
+    }
+    return _videoView;
+}
+
+
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     UIImageView *bgView = [[UIImageView alloc] init];
     bgView.image = [UIImage imageNamed:@"mainCellBackground"];
-//    [bgView setImage:[UIImage imageNamed:@"mainCellBackground"]];
-////    self.backgroundView = bgView;
-//    NSInteger left = bgView.image.size.width * 0.5f;
-//    NSInteger top = bgView.image.size.height * 0.5f;
-//    bgView.image = [bgView.image stretchableImageWithLeftCapWidth:left topCapHeight:top];
+    
+    // 设置背景图片不被拉伸
     CGFloat top = 25; // 顶端盖高度
     CGFloat bottom = 25 ; // 底端盖高度
     CGFloat left = 10; // 左端盖宽度
@@ -83,10 +109,32 @@
     self.text_label.text = topic.text;
     
     // 将中间的内容加入cell中
-    if (topic.type != 29)
+    if (topic.type == 10)
     {
+        self.pictureView.hidden = NO;
     self.pictureView.frame = CGRectMake(0, self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
         self.pictureView.topic = topic;
+        self.videoView.hidden = YES;
+        self.voiceView.hidden = YES;
+    }else if (topic.type == 31){
+        self.voiceView.hidden = NO;
+        self.voiceView.frame = CGRectMake(0,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        self.voiceView.topic = topic;
+        self.pictureView.hidden = YES;
+        self.videoView.hidden = YES;
+    }else if (topic.type == 41)
+    {
+        self.videoView.hidden = NO;
+        self.videoView.frame = CGRectMake(0,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        self.videoView.topic = topic;
+        self.voiceView.hidden = YES;
+        self.pictureView.hidden = YES;
+    }else
+    {
+        self.videoView.hidden = YES;
+        self.voiceView.hidden = YES;
+        self.pictureView.hidden = YES;
+
     }
 
     

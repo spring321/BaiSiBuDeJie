@@ -57,4 +57,14 @@
     return _cellHeight;
 }
 
+
+// 声音时长
+//- (NSString *)voiceTimeStr
+//{
+//    if (!_voiceTimeStr){
+//        NSDate date = [[NSDate alloc] init];
+//        
+//    }
+//}
+//
 @end

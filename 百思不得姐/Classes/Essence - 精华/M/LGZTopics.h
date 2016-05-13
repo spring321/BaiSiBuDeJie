@@ -41,6 +41,16 @@
 /** 返回类型 */
 @property (nonatomic, assign) NSInteger type;
 
+/** 播放次数 */
+@property (nonatomic, assign) NSInteger playfcount;
+
+/** 声音时长 */
+@property (nonatomic, assign) NSInteger voicetime;
+
+/** 视频时长 */
+@property (nonatomic, assign) NSInteger videotime;
+
+
 /***********额外的属性*************/
 /** cell的高度 */
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
@@ -49,5 +59,8 @@
 
 /** 是否为处理过的图片 */
 @property (nonatomic, assign, getter=isBigView) BOOL bigView;
+
+/** 声音时长计算后 */
+@property (nonatomic, assign) NSString *voiceTimeStr;
 
 @end
