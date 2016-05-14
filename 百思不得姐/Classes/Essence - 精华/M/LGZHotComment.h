@@ -12,6 +12,8 @@
 @interface LGZHotComment : NSObject
 /** 音频时长 */
 @property (nonatomic, assign) NSInteger voicetime;
+/** 音频地址 */
+@property (nonatomic, copy) NSString *voiceurl;
 /** 评论文字 */
 @property (nonatomic, copy) NSString *content;
 /** 被点赞数 */

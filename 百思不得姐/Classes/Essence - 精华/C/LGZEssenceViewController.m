@@ -177,7 +177,7 @@
     
 }
 
-// 便签的点击事件
+// 标签的点击事件
 - (void)click:(UIButton *)button
 {
     button.enabled = NO;

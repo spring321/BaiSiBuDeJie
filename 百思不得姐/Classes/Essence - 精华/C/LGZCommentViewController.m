@@ -13,15 +13,22 @@
 #import <AFNetworking.h>
 #import "LGZHotComment.h"
 #import <MJExtension.h>
+#import "LGZCommentCell.h"
 
 @interface LGZCommentViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomHeight;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 /** 最热评论 */
-@property (nonatomic, strong) NSArray *hotComment;
+@property (nonatomic, strong) NSMutableArray *hotComment;
 /** 最新评论 */
 @property (nonatomic, strong) NSMutableArray *recentComment;
+
+/** 存储数据模型 */
+@property (nonatomic, strong) NSArray *Top_cmt;
+
+/** 页码 */
+@property (nonatomic, assign) NSInteger page;
 
 @end
 
@@ -35,6 +42,14 @@
     return _recentComment;
 }
 
+- (NSMutableArray *)hotComment
+{
+    if(!_hotComment){
+        _hotComment = [NSMutableArray array];
+        
+    }
+    return _hotComment;
+}
 
 
 - (void)viewDidLoad {
@@ -52,27 +67,75 @@
 
 // 设置刷新
 - (void)setRefresh{
+    // 下拉刷新
     self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewComment)];
     [self.tableview.mj_header beginRefreshing];
+    
+    // 上拉加载
+    self.tableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreComment)];
+    // 隐藏footer
+    self.tableview.mj_footer.hidden = YES;
+    
+ 
+}
+
+// 获取更多数据
+- (void)loadMoreComment
+{
+        // 设置请求体
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"dataList";
+    params[@"c"] = @"comment";
+    params[@"data_id"] = self.topic.data_id;
+    params[@"hot"] = @"1";
+    params[@"page"] = @(self.page);
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.page++;
+        [self.tableview.mj_footer endRefreshing];
+        [self.tableview reloadData];
+        
+        // 将数据转为模型存储
+        NSArray *hotArrary = [LGZHotComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
+        NSArray *recArrary = [LGZHotComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        [self.hotComment addObjectsFromArray:hotArrary];
+        [self.recentComment addObjectsFromArray:recArrary];
+        
+        NSInteger total = [responseObject[@"total"] integerValue];
+        if (self.recentComment.count >= total){
+            [self.tableview.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        self.page--;
+        [self.tableview.mj_footer endRefreshing];
+    }];
 }
 
 // 获取新数据
 - (void)loadNewComment{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    
+    self.page = 2;
     params[@"a"] = @"dataList";
     params[@"c"] = @"comment";
     params[@"data_id"] = self.topic.data_id;
     params[@"hot"] = @"1";
+
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // 第一进来,直接赋值.
         self.hotComment = [LGZHotComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         self.recentComment = [LGZHotComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
         
         [self.tableview.mj_header endRefreshing];
         [self.tableview reloadData];
+        NSInteger total = [responseObject[@"total"] integerValue];
+        if (self.recentComment.count >= total){
+            [self.tableview.mj_footer endRefreshingWithNoMoreData];
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 
@@ -85,6 +148,14 @@
 {
     self.tableview.autoresizesSubviews = NO;
     self.tableview.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    
+    // 隐藏热门评论
+    if (self.topic.top_cmt.count) {
+        self.Top_cmt = self.topic.top_cmt;
+        self.topic.top_cmt = nil;
+        [self.topic setValue:@0 forKeyPath:@"cellHeight"];
+    }
+    
     
     LGZTopicsCell *topCell = [LGZTopicsCell cell];
     topCell.topic = self.topic;
@@ -107,8 +178,14 @@
     // 设置tableview背景色
     self.tableview.backgroundColor = LGZGolbalBG;
     
+        // 设置cell的高度,ios8之后可用
+    self.tableview.estimatedRowHeight = 44;  // 估计高度
+    self.tableview.rowHeight = UITableViewAutomaticDimension;
+    
+    
         // 监听键盘事件
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [self.tableview registerNib:[UINib nibWithNibName:NSStringFromClass([LGZCommentCell class]) bundle:nil] forCellReuseIdentifier:@"comment"];
 }
 
 
@@ -129,6 +206,12 @@
 {
     // 销毁通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    // 恢复模型数据
+    if (self.Top_cmt.count){
+        self.topic.top_cmt = self.Top_cmt;
+        [self.topic setValue:@0 forKeyPath:@"cellHeight"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -148,6 +231,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    // 设置footer的显示与隐藏
+    tableView.mj_footer.hidden = (self.recentComment.count == 0);
+    
     if (section == 0){ // 最热
         return self.hotComment.count ? self.hotComment.count : self.recentComment.count;
     }else if (section == 1){
@@ -177,17 +263,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"comment"];
-    if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"comment"];
-        LGZHotComment *comment = [self comment:indexPath][indexPath.row];
-        cell.textLabel.text = comment.content;
-    }
+    LGZCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"comment"];
+
+    LGZHotComment *comment = [self comment:indexPath][indexPath.row];
+    // 将模型传递
+    cell.comment = comment;
+    
     return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    UIView *vc = [[UIView alloc] init];
+    vc.size = CGSizeMake(200, 30);
+    vc.x = 10;
+    vc.backgroundColor = LGZGolbalBG;
+    //    vc.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+
     UILabel *label = [[UILabel alloc] init];
     label.textColor = LGZColorWithRGB(67, 67, 67);
     label.backgroundColor = LGZGolbalBG;
@@ -197,18 +290,18 @@
     }else if(section == 1){
         label.text = @"最新评论";
     }
-    return label;
+    label.size = CGSizeMake(200, 20);
+    label.x = 10;
+//    label.backgroundColor = [UIColor redColor];
+    [vc addSubview:label];
+    
+        return vc;
 
 }
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+// - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    if (section == 0){
-//        return self.hotComment.count ? @"最热评论" : @"最新评论";
-//    }else if(section == 1){
-//        return  @"最新评论";
-//    }
-//    return nil;
+//    return 200;
 //}
-
+//
 @end

@@ -14,6 +14,7 @@
 #import "LGZTopicVideoView.h"
 #import "LGZHotComment.h"
 #import "LGZUser.h"
+#import "LGZCommentViewController.h"
 
 @interface LGZTopicsCell()
 @property (strong, nonatomic) IBOutlet UIImageView *profile_image;
@@ -99,6 +100,15 @@
     
 }
 
+- (IBAction)commentButton:(id)sender {
+//    LGZCommentViewController *vc = [[LGZCommentViewController alloc] init];
+//    vc.topic = self.topic;
+//
+//    [self.window.rootViewController.na pushViewController:vc animated:YES];
+//    
+//    NSLog(@"%@",self.window.rootViewController.navigationController);
+    
+}
 
 
 // 设置模型数据

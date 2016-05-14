@@ -60,6 +60,8 @@
 		18F8B0671CE5A11D00D67638 /* LGZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0661CE5A11D00D67638 /* LGZUser.m */; };
 		18F8B06B1CE5C05700D67638 /* LGZCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0691CE5C05700D67638 /* LGZCommentViewController.m */; };
 		18F8B06C1CE5C05700D67638 /* LGZCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B06A1CE5C05700D67638 /* LGZCommentViewController.xib */; };
+		18F8B0701CE6CCAD00D67638 /* LGZCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B06E1CE6CCAD00D67638 /* LGZCommentCell.m */; };
+		18F8B0711CE6CCAD00D67638 /* LGZCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B06F1CE6CCAD00D67638 /* LGZCommentCell.xib */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +178,9 @@
 		18F8B0681CE5C05700D67638 /* LGZCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZCommentViewController.h; sourceTree = "<group>"; };
 		18F8B0691CE5C05700D67638 /* LGZCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZCommentViewController.m; sourceTree = "<group>"; };
 		18F8B06A1CE5C05700D67638 /* LGZCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZCommentViewController.xib; sourceTree = "<group>"; };
+		18F8B06D1CE6CCAD00D67638 /* LGZCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZCommentCell.h; sourceTree = "<group>"; };
+		18F8B06E1CE6CCAD00D67638 /* LGZCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZCommentCell.m; sourceTree = "<group>"; };
+		18F8B06F1CE6CCAD00D67638 /* LGZCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZCommentCell.xib; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -280,6 +285,9 @@
 				18F8B05D1CE56AA900D67638 /* LGZTopicVideoView.h */,
 				18F8B05E1CE56AA900D67638 /* LGZTopicVideoView.m */,
 				18F8B0601CE56ABC00D67638 /* LGZTopicVideoView.xib */,
+				18F8B06D1CE6CCAD00D67638 /* LGZCommentCell.h */,
+				18F8B06E1CE6CCAD00D67638 /* LGZCommentCell.m */,
+				18F8B06F1CE6CCAD00D67638 /* LGZCommentCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -659,6 +667,7 @@
 				18F8B06C1CE5C05700D67638 /* LGZCommentViewController.xib in Resources */,
 				1894C3D91CD9849C00641572 /* LGZFriendTrendsViewController.xib in Resources */,
 				18F8B0611CE56ABC00D67638 /* LGZTopicVideoView.xib in Resources */,
+				18F8B0711CE6CCAD00D67638 /* LGZCommentCell.xib in Resources */,
 				18F8B04D1CE2FB2000D67638 /* LGZTopicPictureView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,6 +772,7 @@
 				1894C3CE1CD8E54C00641572 /* LGZNewViewController.m in Sources */,
 				1894C3D21CD8E54C00641572 /* UIView+LGZExtension.m in Sources */,
 				18F8B0511CE3502700D67638 /* LGZShowPictureController.m in Sources */,
+				18F8B0701CE6CCAD00D67638 /* LGZCommentCell.m in Sources */,
 				1894C3D31CD8E54C00641572 /* main.m in Sources */,
 				1894C3CF1CD8E54C00641572 /* AppDelegate.m in Sources */,
 				18F8B0641CE5A10C00D67638 /* LGZHotComment.m in Sources */,

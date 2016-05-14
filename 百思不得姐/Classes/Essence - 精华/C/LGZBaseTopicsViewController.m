@@ -42,7 +42,9 @@ static NSString * const ID = @"topicCell";
 - (void)setTableViewThing
 {
     self.tableView.backgroundColor = [UIColor clearColor];
+    // 设置分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LGZTopicsCell class]) bundle:nil] forCellReuseIdentifier:ID];
 }
 /*
