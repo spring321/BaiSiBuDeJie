@@ -12,4 +12,6 @@
 @interface LGZTopicsCell : UITableViewCell
 /** 模型对象 */
 @property (nonatomic, strong) LGZTopics *topic;
+
++ (instancetype)cell;
 @end

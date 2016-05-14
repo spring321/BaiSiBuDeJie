@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LGZCommentViewController">
+            <connections>
+                <outlet property="bottomHeight" destination="fQI-B7-PSO" id="hZx-Qe-nVX"/>
+                <outlet property="tableview" destination="5AV-vh-3xg" id="cEH-m4-roD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4d6-pq-TIG">
+                    <rect key="frame" x="0.0" y="473" width="375" height="44"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment-bar-bg" translatesAutoresizingMaskIntoConstraints="NO" id="utv-W9-WVf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRu-Ez-bIP">
+                            <rect key="frame" x="0.0" y="0.0" width="46" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="N3B-Zf-sOk"/>
+                            </constraints>
+                            <state key="normal" image="comment-bar-voice"/>
+                            <state key="highlighted" image="comment-bar-voice-click"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awz-GK-r8K">
+                            <rect key="frame" x="329" y="0.0" width="46" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="P8s-GW-agU"/>
+                            </constraints>
+                            <state key="normal" image="comment_bar_at_icon"/>
+                            <state key="highlighted" image="comment_bar_at_icon_click"/>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAK-tm-6fp">
+                            <rect key="frame" x="46" y="5" width="283" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="utv-W9-WVf" secondAttribute="trailing" id="353-3S-aWM"/>
+                        <constraint firstItem="pRu-Ez-bIP" firstAttribute="top" secondItem="4d6-pq-TIG" secondAttribute="top" id="5Fp-je-pBi"/>
+                        <constraint firstItem="Awz-GK-r8K" firstAttribute="top" secondItem="4d6-pq-TIG" secondAttribute="top" id="9lx-51-CIc"/>
+                        <constraint firstItem="CAK-tm-6fp" firstAttribute="top" secondItem="4d6-pq-TIG" secondAttribute="top" constant="5" id="KCj-9B-zZ3"/>
+                        <constraint firstAttribute="bottom" secondItem="Awz-GK-r8K" secondAttribute="bottom" id="RmH-i2-mGE"/>
+                        <constraint firstItem="CAK-tm-6fp" firstAttribute="leading" secondItem="pRu-Ez-bIP" secondAttribute="trailing" id="RnV-4N-thq"/>
+                        <constraint firstItem="Awz-GK-r8K" firstAttribute="leading" secondItem="CAK-tm-6fp" secondAttribute="trailing" id="UKL-4W-5KD"/>
+                        <constraint firstItem="utv-W9-WVf" firstAttribute="top" secondItem="4d6-pq-TIG" secondAttribute="top" id="Vjh-A1-K5g"/>
+                        <constraint firstItem="pRu-Ez-bIP" firstAttribute="leading" secondItem="4d6-pq-TIG" secondAttribute="leading" id="XTc-rd-Gym"/>
+                        <constraint firstAttribute="bottom" secondItem="CAK-tm-6fp" secondAttribute="bottom" constant="5" id="Xa0-zq-gy9"/>
+                        <constraint firstAttribute="height" constant="44" id="Xgv-rw-z08"/>
+                        <constraint firstAttribute="trailing" secondItem="Awz-GK-r8K" secondAttribute="trailing" id="aEE-zf-viV"/>
+                        <constraint firstItem="utv-W9-WVf" firstAttribute="leading" secondItem="4d6-pq-TIG" secondAttribute="leading" id="con-yM-wFG"/>
+                        <constraint firstAttribute="bottom" secondItem="pRu-Ez-bIP" secondAttribute="bottom" id="i6v-Xs-ixH"/>
+                        <constraint firstAttribute="bottom" secondItem="utv-W9-WVf" secondAttribute="bottom" id="w2j-KG-LwS"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-vh-3xg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4wx-WO-qwe"/>
+                        <outlet property="delegate" destination="-1" id="oaG-96-Byc"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4d6-pq-TIG" firstAttribute="top" secondItem="5AV-vh-3xg" secondAttribute="bottom" id="ANp-Za-33K"/>
+                <constraint firstAttribute="trailing" secondItem="5AV-vh-3xg" secondAttribute="trailing" id="DWT-Lf-jY9"/>
+                <constraint firstAttribute="trailing" secondItem="4d6-pq-TIG" secondAttribute="trailing" id="Ifp-wr-nGb"/>
+                <constraint firstAttribute="bottom" secondItem="4d6-pq-TIG" secondAttribute="bottom" id="fQI-B7-PSO"/>
+                <constraint firstItem="5AV-vh-3xg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pwv-co-MmX"/>
+                <constraint firstItem="4d6-pq-TIG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="swu-mO-WuF"/>
+                <constraint firstItem="5AV-vh-3xg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x8w-oJ-6rM"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="236.5" y="348.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="comment-bar-bg" width="320" height="49"/>
+        <image name="comment-bar-voice" width="29" height="29"/>
+        <image name="comment-bar-voice-click" width="29" height="29"/>
+        <image name="comment_bar_at_icon" width="27" height="27"/>
+        <image name="comment_bar_at_icon_click" width="27" height="27"/>
+    </resources>
+</document>

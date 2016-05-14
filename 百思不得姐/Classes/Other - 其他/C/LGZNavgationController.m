@@ -51,7 +51,7 @@
         [leftButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         
         // 将按钮向左边移动
-        leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+        leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
         
         UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         

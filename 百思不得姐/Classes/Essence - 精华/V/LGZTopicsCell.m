@@ -12,6 +12,9 @@
 #import "LGZTopicPictureView.h"
 #import "LGZTopicVoiceView.h"
 #import "LGZTopicVideoView.h"
+#import "LGZHotComment.h"
+#import "LGZUser.h"
+
 @interface LGZTopicsCell()
 @property (strong, nonatomic) IBOutlet UIImageView *profile_image;
 @property (strong, nonatomic) IBOutlet UILabel *screen_name;
@@ -22,17 +25,29 @@
 @property (strong, nonatomic) IBOutlet UIButton *comment;
 @property (strong, nonatomic) IBOutlet UIImageView *sina_v_image;
 @property (strong, nonatomic) IBOutlet UILabel *text_label;
-//** 中间的view */
+/** 中间的view */
 @property (nonatomic, strong) LGZTopicPictureView *pictureView;
-//** 中间的view */
+/** 中间的view */
 @property (nonatomic, strong) LGZTopicVoiceView *voiceView;
-//** 中间的view */
+/** 中间的view */
 @property (nonatomic, strong) LGZTopicVideoView *videoView;
+
+
+/**评论的view */
+@property (strong, nonatomic) IBOutlet UIView *hotCommentView;
+
+/** 最热评论label */
+@property (strong, nonatomic) IBOutlet UILabel *commentLabel;
 
 @end
 
 
 @implementation LGZTopicsCell
+
++ (instancetype)cell
+{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
+}
 
 - (UIView *)pictureView
 {
@@ -98,7 +113,6 @@
     
     // 设置用户名称
     self.screen_name.text = topic.name;
-//    self.created_at.text = topic.created_at;
     // 设置发帖时间
     [self setTimeFrom:topic.created_at];
     
@@ -135,6 +149,14 @@
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
 
+    }
+    
+    LGZHotComment *comt = [topic.top_cmt firstObject];
+    if (comt){
+        self.hotCommentView.hidden = NO;
+        self.commentLabel.text = [NSString stringWithFormat:@"%@ :%@",comt.user.username,comt.content];
+    }else{
+        self.hotCommentView.hidden = YES;
     }
 
     
@@ -204,11 +226,17 @@
     // Configure the view for the selected state
 }
 
+
+- (IBAction)buttonClick:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"收藏",@"举报", nil];
+    [sheet showInView:self.window];
+}
+
 - (void)setFrame:(CGRect)frame
 {
     frame.origin.x = 10;
     frame.size.width -= frame.origin.x * 2;
-    frame.size.height -= 10;
+    frame.size.height = self.topic.cellHeight - 10;
     frame.origin.y += 10;
     [super setFrame:frame];
 }

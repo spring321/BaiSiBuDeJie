@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface LGZTopics : NSObject
+
+/** id */
+@property (nonatomic, copy) NSString *data_id;
 /** 用户名字 */
 @property (nonatomic, copy) NSString *name;
 /** 用户头像 */
@@ -49,6 +52,9 @@
 
 /** 视频时长 */
 @property (nonatomic, assign) NSInteger videotime;
+
+/** 最热评论 */
+@property (nonatomic, strong) NSArray *top_cmt;
 
 
 /***********额外的属性*************/
