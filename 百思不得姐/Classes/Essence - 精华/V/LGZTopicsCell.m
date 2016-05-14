@@ -15,7 +15,7 @@
 #import "LGZHotComment.h"
 #import "LGZUser.h"
 #import "LGZCommentViewController.h"
-
+#import "LGZNavgationController.h"
 @interface LGZTopicsCell()
 @property (strong, nonatomic) IBOutlet UIImageView *profile_image;
 @property (strong, nonatomic) IBOutlet UILabel *screen_name;
@@ -101,12 +101,12 @@
 }
 
 - (IBAction)commentButton:(id)sender {
-//    LGZCommentViewController *vc = [[LGZCommentViewController alloc] init];
-//    vc.topic = self.topic;
-//
-//    [self.window.rootViewController.na pushViewController:vc animated:YES];
-//    
-//    NSLog(@"%@",self.window.rootViewController.navigationController);
+    LGZCommentViewController *vc = [[LGZCommentViewController alloc] init];
+    vc.topic = self.topic;
+
+   
+    // 获取extension的navigationController然后push
+    [(LGZNavgationController *)self.window.rootViewController.childViewControllers[0] pushViewController:vc animated:YES];
     
 }
 

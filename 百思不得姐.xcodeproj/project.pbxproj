@@ -62,6 +62,7 @@
 		18F8B06C1CE5C05700D67638 /* LGZCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B06A1CE5C05700D67638 /* LGZCommentViewController.xib */; };
 		18F8B0701CE6CCAD00D67638 /* LGZCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B06E1CE6CCAD00D67638 /* LGZCommentCell.m */; };
 		18F8B0711CE6CCAD00D67638 /* LGZCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B06F1CE6CCAD00D67638 /* LGZCommentCell.xib */; };
+		18F8B0741CE7787C00D67638 /* LGZTopStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0731CE7787C00D67638 /* LGZTopStatusView.m */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +182,8 @@
 		18F8B06D1CE6CCAD00D67638 /* LGZCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZCommentCell.h; sourceTree = "<group>"; };
 		18F8B06E1CE6CCAD00D67638 /* LGZCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZCommentCell.m; sourceTree = "<group>"; };
 		18F8B06F1CE6CCAD00D67638 /* LGZCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZCommentCell.xib; sourceTree = "<group>"; };
+		18F8B0721CE7787C00D67638 /* LGZTopStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTopStatusView.h; sourceTree = "<group>"; };
+		18F8B0731CE7787C00D67638 /* LGZTopStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTopStatusView.m; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -463,6 +466,8 @@
 				18F8B0271CDC3CC900D67638 /* LGZGuidePushView.h */,
 				18F8B0281CDC3CC900D67638 /* LGZGuidePushView.m */,
 				18F8B02A1CDC3CD700D67638 /* LGZGuidePushView.xib */,
+				18F8B0721CE7787C00D67638 /* LGZTopStatusView.h */,
+				18F8B0731CE7787C00D67638 /* LGZTopStatusView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -741,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F8B0741CE7787C00D67638 /* LGZTopStatusView.m in Sources */,
 				18F8B06B1CE5C05700D67638 /* LGZCommentViewController.m in Sources */,
 				181ED7AE1CDAE75F00D44CF0 /* LGZTagTableViewController.m in Sources */,
 				181ED7A21CD9A90E00D44CF0 /* LGZFocusCategoryCell.m in Sources */,
