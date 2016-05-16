@@ -65,13 +65,11 @@ static NSString * const tagId = @"tag";
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
-        NSLog(@"%@",responseObject);
         self.tagsArrary = [LGZTagsModel mj_objectArrayWithKeyValuesArray:responseObject];
         [self.tableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"加载失败"];
-                NSLog(@"%@",error);
     }];
 }
 

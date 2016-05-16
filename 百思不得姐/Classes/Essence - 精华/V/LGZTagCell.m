@@ -29,7 +29,9 @@
 -(void)setTagModel:(LGZTagsModel *)tagModel
 {
     _tagModel = tagModel;
-    [self.imageListImageView sd_setImageWithURL:[NSURL URLWithString:tagModel.image_list]];
+    [self.imageListImageView sd_setImageWithURL:[NSURL URLWithString:tagModel.image_list] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageListImageView.image = [image circleImage];
+    }];
     self.themeNmaeLabel.text = tagModel.theme_name;
     self.subNumberLabel.text = [NSString stringWithFormat:@"%zd",tagModel.sub_number];
 }

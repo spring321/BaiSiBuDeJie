@@ -76,7 +76,8 @@ static NSString * const userId = @"userCell";
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //        NSLog(@"%@", responseObject);
+        
+        
         
         // 将字典数组转换为模型数组
         self.categorys = [LGZFocusCategory mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -118,8 +119,7 @@ static NSString * const userId = @"userCell";
         [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            //        NSLog(@"%@", responseObject[@"list"]);
-            if (self.params != params) return;
+                        if (self.params != params) return;
             NSArray *usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
             [c.users removeAllObjects];
             [c.users addObjectsFromArray:usersModel];
@@ -160,8 +160,7 @@ static NSString * const userId = @"userCell";
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //        NSLog(@"%@", responseObject[@"list"]);
-        if (self.params != params) return;
+                if (self.params != params) return;
         NSArray *usersModel = [LGZUserModel  mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         [c.users addObjectsFromArray:usersModel];
         c.total = [responseObject[@"total"] integerValue];

@@ -31,7 +31,9 @@
     self.userName.text = userModel.screen_name;
     self.fansLabel.text = [NSString stringWithFormat:@"%zd 人关注",userModel.fans_count ];
     
-    [self.headerView sd_setImageWithURL:[NSURL URLWithString:userModel.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.headerView sd_setImageWithURL:[NSURL URLWithString:userModel.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.headerView.image = [image circleImage];
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
