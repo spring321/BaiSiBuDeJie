@@ -81,7 +81,10 @@
 {
     if (self.lastController == viewController)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"buttonClick" object:nil userInfo:nil];
+//        NSDictionary *userInfo = @{
+//                                   @"tableView" : viewController
+//                                   };
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"buttonClick" object:viewController userInfo:nil];
     }
     self.lastController = viewController;
 }

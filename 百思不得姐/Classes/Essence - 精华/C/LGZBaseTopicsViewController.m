@@ -49,16 +49,20 @@ static NSString * const ID = @"topicCell";
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LGZTopicsCell class]) bundle:nil] forCellReuseIdentifier:ID];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(buttonClick) name:@"buttonClick" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(buttonClick:) name:@"buttonClick" object:nil];
 }
-- (void)buttonClick{
-    
+- (void)buttonClick:(NSNotification *)notification{
+    UIViewController *vc = [notification object];
+    if (vc == self.view.window.rootViewController.childViewControllers[0]){ //判断点击的控制器是否为精华控制器,是的话才会刷新
+    // 将tableview转换坐标系
     CGRect newFrame = [[UIApplication sharedApplication].keyWindow convertRect:self.view.frame fromView:self.view.superview];
+    // 判断是否在窗口中
     BOOL isIn = CGRectContainsRect(newFrame, [UIApplication sharedApplication].keyWindow.bounds);
 
 
         if (isIn){
         [self.tableView.mj_header beginRefreshing];
+        }
     }
     
 }
