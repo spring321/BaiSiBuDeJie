@@ -2,7 +2,7 @@
 //  LGZEssenceViewController.m
 //  百思不得姐
 //
-//  Created by LGZwr on 16/5/3.
+//  Created by LGZwr on 16/4/3.
 //  Copyright © 2016年 LGZ. All rights reserved.
 //
 
@@ -117,6 +117,13 @@
     
     btn.enabled = NO;
     self.selectedBtn = btn;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        self.indicatorView.width = self.selectedBtn.titleLabel.width;
+        self.indicatorView.centerX = self.selectedBtn.centerX;
+        
+    }];
+
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -138,16 +145,6 @@
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
-    // 设置指示器
-    UIView *indicatorView = [[UIView alloc] init];
-    indicatorView.backgroundColor = [UIColor redColor];
-    
-    indicatorView.height = 2;
-    indicatorView.y = titlesView.height - 2;
-    
-    [titlesView addSubview:indicatorView];
-    self.indicatorView = indicatorView;
-
     
     // 设置指示器标签
     for (NSInteger i = 0; i < self.childViewControllers.count; i++) {
@@ -166,6 +163,7 @@
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         
         if(i == 0){
+           
             btn.enabled = NO;
             self.selectedBtn = btn;
             // 更新titleLabel的大小
@@ -174,6 +172,20 @@
             self.indicatorView.centerX = btn.centerX;
         }
     }
+    // 设置指示器
+    UIView *indicatorView = [[UIView alloc] init];
+    indicatorView.backgroundColor = [UIColor redColor];
+    
+    indicatorView.width = self.selectedBtn.titleLabel.width;
+    indicatorView.centerX = self.selectedBtn.centerX;
+
+    indicatorView.height = 2;
+    indicatorView.y = titlesView.height - 2;
+    
+    [titlesView addSubview:indicatorView];
+    self.indicatorView = indicatorView;
+    
+
     
 
     

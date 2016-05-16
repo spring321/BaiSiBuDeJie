@@ -2,7 +2,7 @@
 //  LGZTabBarController.m
 //  百思不得姐
 //
-//  Created by LGZwr on 16/5/3.
+//  Created by LGZwr on 16/4/3.
 //  Copyright © 2016年 LGZ. All rights reserved.
 //
 
@@ -14,7 +14,10 @@
 #import "LGZTabBar.h"
 #import "LGZNavgationController.h"
 
-@interface LGZTabBarController ()
+@interface LGZTabBarController () <UITabBarControllerDelegate>
+
+/** 记录点击控制器 */
+@property (nonatomic, strong) UIViewController *lastController;
 
 @end
 
@@ -47,6 +50,12 @@
     [self setUpChild:[[LGZMeViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     [self setValue:[[LGZTabBar alloc] init] forKeyPath:@"tabBar"];
+    
+    // 设置进来的第一个控制器为默认控制器
+    self.lastController = self.childViewControllers[0];
+    
+    self.delegate = self;
+    
 }
 
 
@@ -65,6 +74,19 @@
     
     [self addChildViewController:nav];
 }
+
+#pragma mark - <UITabBarControllerDelegate>
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if (self.lastController == viewController)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"buttonClick" object:nil userInfo:nil];
+    }
+    self.lastController = viewController;
+}
+
+
 
 /*
 #pragma mark - Navigation

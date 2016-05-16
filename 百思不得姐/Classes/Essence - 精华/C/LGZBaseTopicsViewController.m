@@ -36,6 +36,8 @@ static NSString * const ID = @"topicCell";
     
     // 设置tableview的初始化设置
     [self setTableViewThing];
+    
+    
 }
 
 // 初始化tableview
@@ -46,14 +48,21 @@ static NSString * const ID = @"topicCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LGZTopicsCell class]) bundle:nil] forCellReuseIdentifier:ID];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(buttonClick) name:@"buttonClick" object:nil];
 }
-/*
- // 设置下拉刷新控件
- - (void)setHeaderRefresh
- {
- [self.tableView.mj_header beginRefreshing];
- 
- }*/
+- (void)buttonClick{
+    
+    CGRect newFrame = [[UIApplication sharedApplication].keyWindow convertRect:self.view.frame fromView:self.view.superview];
+    BOOL isIn = CGRectContainsRect(newFrame, [UIApplication sharedApplication].keyWindow.bounds);
+
+
+        if (isIn){
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
+}
+
 
 // 下拉刷新
 - (void)getNewTopicWithHeaderAndFooter
