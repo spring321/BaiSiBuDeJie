@@ -224,6 +224,7 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
     [self.view endEditing:YES];
 }
 
@@ -292,13 +293,50 @@
     }
     label.size = CGSizeMake(200, 20);
     label.x = 10;
-//    label.backgroundColor = [UIColor redColor];
     [vc addSubview:label];
     
         return vc;
 
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    LGZCommentCell *cell = (LGZCommentCell *)[tableView cellForRowAtIndexPath:indexPath];
+    // 让被点击cell成为第一响应者
+    [cell becomeFirstResponder];
+    
+    UIMenuController *menuC = [UIMenuController sharedMenuController];
+    UIMenuItem *ding = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+    UIMenuItem *report = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(report:)];
+    UIMenuItem *jubao = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(jubao:)];
+    
+    // 设置menuController的item
+    menuC.menuItems = @[ding, report, jubao];
+    
+    // 设置menu显示的大小
+    CGRect rect = CGRectMake(0, cell.height / 2, cell.width, cell.height / 2);
+    [menuC setTargetRect:rect inView:cell];
+    [menuC setMenuVisible:YES animated:YES];
+}
+
+- (void)ding:(UIMenuController *)menuController
+{
+    NSIndexPath *indexPath = [self.tableview indexPathForSelectedRow];
+    NSLog(@"%@", [([self comment:indexPath][indexPath.row]) content]);
+}
+- (void)report:(UIMenuController *)menuController
+{
+    NSIndexPath *indexPath = [self.tableview indexPathForSelectedRow];
+    NSLog(@"%@", [([self comment:indexPath][indexPath.row]) content]);
+
+}
+- (void)jubao:(UIMenuController *)menuController
+{
+    NSIndexPath *indexPath = [self.tableview indexPathForSelectedRow];
+    NSLog(@"%@", [([self comment:indexPath][indexPath.row]) content]);
+
+}
 // - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    return 200;

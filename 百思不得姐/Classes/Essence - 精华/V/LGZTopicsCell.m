@@ -119,7 +119,9 @@
 //    topic.sina_v = arc4random_uniform(100) % 2;
     
     // 设置用户头像
-    [self.profile_image sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]];
+    [self.profile_image sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.profile_image.image = [image circleImage];
+    }];
     
     // 设置用户名称
     self.screen_name.text = topic.name;
@@ -136,20 +138,20 @@
     if (topic.type == 10)
     {
         self.pictureView.hidden = NO;
-    self.pictureView.frame = CGRectMake(0, self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+    self.pictureView.frame = CGRectMake(10, self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
         self.pictureView.topic = topic;
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;
     }else if (topic.type == 31){
         self.voiceView.hidden = NO;
-        self.voiceView.frame = CGRectMake(0,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        self.voiceView.frame = CGRectMake(10,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
         self.voiceView.topic = topic;
         self.pictureView.hidden = YES;
         self.videoView.hidden = YES;
     }else if (topic.type == 41)
     {
         self.videoView.hidden = NO;
-        self.videoView.frame = CGRectMake(0,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        self.videoView.frame = CGRectMake(10,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
         self.videoView.topic = topic;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
@@ -244,8 +246,8 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    frame.origin.x = 10;
-    frame.size.width -= frame.origin.x * 2;
+//    frame.origin.x = 10;
+//    frame.size.width -= frame.origin.x * 2;
     frame.size.height = self.topic.cellHeight - 10;
     frame.origin.y += 10;
     [super setFrame:frame];

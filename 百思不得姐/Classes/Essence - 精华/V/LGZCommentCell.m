@@ -27,7 +27,9 @@
 - (void)setComment:(LGZHotComment *)comment
 {
     _comment = comment;
-    [self.profileImage sd_setImageWithURL:[NSURL URLWithString:comment.user.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.profileImage sd_setImageWithURL:[NSURL URLWithString:comment.user.profile_image] placeholderImage:[[UIImage imageNamed:@"defaultUserIcon"] circleImage]completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.profileImage.image = [image circleImage];
+    }];
     if ([comment.user.sex isEqualToString:@"m"]){
         self.sexImageView.image = [UIImage imageNamed:@"Profile_manIcon"];
     }else{
@@ -51,7 +53,17 @@
     
 }
 
+// 运行控件成为第一响应者
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
 
+// 不要系统自带的样式
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return NO;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

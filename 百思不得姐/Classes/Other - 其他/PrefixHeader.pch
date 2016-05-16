@@ -12,6 +12,8 @@
 #import "UIBarButtonItem+LGZExtension.h"
 #import "NSDate+LGZExtension.h"
 
+#import "UIImage+LGZExtension.h"
+
 
 #ifdef DEBUG
 #define LGZLog(...) NSLog(__VA_ARGS__)

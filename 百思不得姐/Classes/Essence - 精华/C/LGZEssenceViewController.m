@@ -138,6 +138,17 @@
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
+    // 设置指示器
+    UIView *indicatorView = [[UIView alloc] init];
+    indicatorView.backgroundColor = [UIColor redColor];
+    
+    indicatorView.height = 2;
+    indicatorView.y = titlesView.height - 2;
+    
+    [titlesView addSubview:indicatorView];
+    self.indicatorView = indicatorView;
+
+    
     // 设置指示器标签
     for (NSInteger i = 0; i < self.childViewControllers.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -164,15 +175,6 @@
         }
     }
     
-    // 设置指示器
-    UIView *indicatorView = [[UIView alloc] init];
-    indicatorView.backgroundColor = [UIColor redColor];
-    
-    indicatorView.height = 2;
-    indicatorView.y = titlesView.height - 2;
-    
-    [titlesView addSubview:indicatorView];
-    self.indicatorView = indicatorView;
 
     
 }

@@ -26,6 +26,8 @@
     // 设置圆角图片
     self.loginButton.layer.cornerRadius = 5;
     self.loginButton.layer.masksToBounds = YES;
+    
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     // Do any additional setup after loading the view from its nib.
     
 //    // 判断输入框是不是第一响应者
@@ -84,6 +86,8 @@
     }];
 }
 
+
+// 设置状态栏为白色
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

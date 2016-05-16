@@ -30,13 +30,14 @@
     // 设置窗口根控制器
     self.window.rootViewController = [[LGZTabBarController alloc] init];
     
+    
+    
     // 显示窗口
     [self.window makeKeyAndVisible];
     
     
     [LGZGuidePushView show];
-//    [LGZTopStatusView show];
-    return YES;
+        return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -59,6 +60,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    [LGZTopStatusView show];
+    
+
     
 }
 

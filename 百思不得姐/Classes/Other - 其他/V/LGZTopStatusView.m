@@ -17,9 +17,11 @@ static UIWindow *window_;
     window_ = [[UIWindow alloc] init];
     window_.windowLevel = UIWindowLevelAlert;
     window_.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20);
-    window_.backgroundColor = [UIColor redColor];
-//    window_.rootViewController = [[LGZEssenceViewController alloc] init];
-    [window_ addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollToTop)]];
+    window_.backgroundColor = [UIColor clearColor];
+    
+    // 由于window必须有个跟控制器,不然程序崩溃,所以添加了一个随便的控制器;
+    window_.rootViewController = [[UIViewController alloc] init];
+//    [window_ addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollToTop)]];
 }
 
 + (void)scrollToTop
@@ -27,15 +29,22 @@ static UIWindow *window_;
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [self searchScrollViewInView:window];
-    NSLog(@"----");
-}
+    
+    }
 
 // 用递归方法查找所有ScrollView
 + (void)searchScrollViewInView:(UIView *)superView
 {
     for (UIScrollView *view in superView.subviews) {
-        if ([view isKindOfClass:[UIScrollView class]]){
-            [view setContentOffset:CGPointZero animated:YES];
+        // 得到view的frame
+        CGRect newFrame = [view.superview convertRect:view.frame toView:nil];
+        CGRect winFrame = [UIApplication sharedApplication].keyWindow.bounds;
+        
+        BOOL isShowingOnWindow = !view.hidden && view.alpha > 0.01 && CGRectIntersectsRect(newFrame, winFrame);
+        if ([view isKindOfClass:[UIScrollView class]] && isShowingOnWindow){
+            CGPoint offset = view.contentOffset;
+            offset.y = - view.contentInset.top;
+            [view setContentOffset:offset animated:YES];
         }
         [self searchScrollViewInView:view];
     }

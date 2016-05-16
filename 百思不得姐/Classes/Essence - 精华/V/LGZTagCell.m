@@ -36,13 +36,12 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    frame.origin.x = 5;
-    frame.size.width -= self.x * 2;
+//    frame.origin.x = 5;
+//    frame.size.width -= self.x * 2;
     frame.size.height -= 1;
     
     [super setFrame:frame];
 
-    NSLog(@"%f", frame.origin.x);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
