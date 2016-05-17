@@ -18,8 +18,27 @@
 // 在initialize中统一设置LGZNavgationController中的navigationbar的背景图片,而且只会调用一次该方法
 + (void)initialize
 {
+    // 设置标题字体颜色与大小
     UINavigationBar *nav = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
     [nav setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    [nav setTitleTextAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:20]}];
+    
+    
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    
+    // 正常下
+    NSMutableDictionary *itemAttri = [NSMutableDictionary dictionary];
+    itemAttri[NSFontAttributeName] = [UIFont systemFontOfSize:14];
+    itemAttri[NSForegroundColorAttributeName] = [UIColor blackColor];
+    [item setTitleTextAttributes:itemAttri forState:UIControlStateNormal];
+    
+    // disable
+    NSMutableDictionary *itemDisableAttri = [NSMutableDictionary dictionary];
+    itemDisableAttri[NSFontAttributeName] = [UIFont systemFontOfSize:14];
+    itemDisableAttri[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    [item setTitleTextAttributes:itemDisableAttri forState:UIControlStateDisabled];
+    
+
 }
 
 - (void)viewDidLoad {

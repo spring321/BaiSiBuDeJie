@@ -92,6 +92,7 @@
 - (void)click:(LGZSquareButton *)button{
     
     LGZWebViewController *wvc = [[LGZWebViewController alloc] init];
+    wvc.title = button.square.name;
     wvc.url = button.square.url;
     UITabBarController *tabBarController = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     

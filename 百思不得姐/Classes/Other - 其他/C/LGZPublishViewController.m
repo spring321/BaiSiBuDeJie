@@ -9,6 +9,9 @@
 #import "LGZPublishViewController.h"
 #import "LGZOtherLoginButton.h"
 #import <POP.h>
+#import "LGZPostViewController.h"
+
+#import "LGZNavgationController.h"
 
 @interface LGZPublishViewController ()
 
@@ -113,7 +116,21 @@
 - (void)buttonClick:(UIButton *)button
 {
     [self cancelWithBlock:^{
-        if (button.tag == 0){
+        if (button.tag == 2){
+            
+            UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+            
+            
+            LGZPostViewController *vc = [[LGZPostViewController alloc] init];
+            
+            LGZNavgationController *nav = [[LGZNavgationController alloc] initWithRootViewController:vc];
+            
+            vc.title = @"发表段子";
+            
+            [root presentViewController:nav animated:YES completion:nil];
+            
+            
+            
         }
 
     }];
