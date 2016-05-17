@@ -18,9 +18,10 @@
 
 + (void)show
 {
-    NSString *key = @"CFBundleShortVersionString";
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-    NSString *sanboxVersion = [[NSUserDefaults standardUserDefaults] valueForKey:key];
+    NSString *guideKey = @"CFBundleShortVersionString";
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[guideKey];
+    NSString *sanboxVersion = [[NSUserDefaults standardUserDefaults] valueForKey:guideKey];
+//    NSLog(@"%@,-------- %@",currentVersion, sanboxVersion);
     if (![currentVersion isEqualToString:sanboxVersion])
     {
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -28,7 +29,7 @@
         guidepage.frame = window.bounds;
         [window addSubview:guidepage];
         
-        [[NSUserDefaults standardUserDefaults] setValue:currentVersion forKey:key];
+        [[NSUserDefaults standardUserDefaults] setValue:currentVersion forKey:guideKey];
     }
 }
 - (IBAction)done:(id)sender {

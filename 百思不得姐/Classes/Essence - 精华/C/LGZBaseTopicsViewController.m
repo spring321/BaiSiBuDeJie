@@ -14,6 +14,7 @@
 #import "LGZTopics.h"
 #import "LGZTopicsCell.h"
 #import "LGZCommentViewController.h"
+#import "LGZNewViewController.h"
 
 @interface  LGZBaseTopicsViewController()
 
@@ -67,6 +68,11 @@ static NSString * const ID = @"topicCell";
     
 }
 
+- (NSString *)a
+{
+    return [self.parentViewController isKindOfClass:[LGZNewViewController class]] ? @"newList" : @"list";
+}
+
 
 // 下拉刷新
 - (void)getNewTopicWithHeaderAndFooter
@@ -77,13 +83,16 @@ static NSString * const ID = @"topicCell";
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getMoreTopics)];
     
 }
+
+
+
 // 获得新数据
 - (void)getNewTopics
 {
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
     
@@ -105,7 +114,7 @@ static NSString * const ID = @"topicCell";
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
     params[@"maxtime"] = self.maxtime;

@@ -47,7 +47,7 @@
     
     [self setUpChild:[[LGZFriendTrendsViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
-    [self setUpChild:[[LGZMeViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setUpChild:[[LGZMeViewController alloc] initWithStyle:UITableViewStyleGrouped] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     [self setValue:[[LGZTabBar alloc] init] forKeyPath:@"tabBar"];
     

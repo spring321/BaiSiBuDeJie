@@ -6,8 +6,7 @@
 //  Copyright © 2016年 LGZ. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface LGZNewViewController : UIViewController
+#import "LGZEssenceViewController.h"
+@interface LGZNewViewController : LGZEssenceViewController
 
 @end

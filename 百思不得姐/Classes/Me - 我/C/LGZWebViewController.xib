@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LGZWebViewController">
+            <connections>
+                <outlet property="goBackButton" destination="tqf-fW-GpH" id="dWG-dO-pDT"/>
+                <outlet property="goForwardButton" destination="50W-iN-iuc" id="4v9-bi-SZp"/>
+                <outlet property="progress" destination="y7J-1Z-PuS" id="YvF-em-Ez9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="gis-kb-Bq8" id="3ak-CL-aCN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="471" height="453"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiD-JQ-hmi">
+                    <rect key="frame" x="0.0" y="409" width="471" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="bEe-F6-CbZ"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="&lt;" id="tqf-fW-GpH">
+                            <connections>
+                                <action selector="goBack:" destination="-1" id="LT4-dr-O6y"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="x7v-Cm-lcf"/>
+                        <barButtonItem title="&gt;" id="50W-iN-iuc">
+                            <connections>
+                                <action selector="goForward:" destination="-1" id="lSR-hk-Xg7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hK1-gv-0Pj"/>
+                        <barButtonItem systemItem="refresh" id="5R5-Hw-9Ka">
+                            <connections>
+                                <action selector="refresh:" destination="-1" id="b4c-Rc-3XC"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gis-kb-Bq8">
+                    <rect key="frame" x="0.0" y="0.0" width="471" height="409"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                </webView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-1Z-PuS">
+                    <rect key="frame" x="0.0" y="64" width="471" height="2"/>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gis-kb-Bq8" secondAttribute="trailing" id="0dv-Y1-ylK"/>
+                <constraint firstItem="gis-kb-Bq8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Uw-HR-rzL"/>
+                <constraint firstItem="y7J-1Z-PuS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PEP-V7-oGc"/>
+                <constraint firstAttribute="bottom" secondItem="MiD-JQ-hmi" secondAttribute="bottom" id="R3a-OW-lhp"/>
+                <constraint firstAttribute="trailing" secondItem="MiD-JQ-hmi" secondAttribute="trailing" id="S5q-pL-hef"/>
+                <constraint firstItem="MiD-JQ-hmi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VMX-yD-WBc"/>
+                <constraint firstItem="MiD-JQ-hmi" firstAttribute="top" secondItem="gis-kb-Bq8" secondAttribute="bottom" id="WY8-N5-Fpo"/>
+                <constraint firstItem="y7J-1Z-PuS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="bUT-f0-hRv"/>
+                <constraint firstItem="gis-kb-Bq8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hcq-5p-PQm"/>
+                <constraint firstAttribute="trailing" secondItem="y7J-1Z-PuS" secondAttribute="trailing" id="wZs-Yc-srk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="462.5" y="168.5"/>
+        </view>
+    </objects>
+</document>

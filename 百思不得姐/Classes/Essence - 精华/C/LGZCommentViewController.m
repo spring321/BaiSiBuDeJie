@@ -92,6 +92,12 @@
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]){
+            [self.tableview.mj_footer endRefreshingWithNoMoreData];
+            
+            return ;
+        }
+        
         self.page++;
         [self.tableview.mj_footer endRefreshing];
         [self.tableview reloadData];
@@ -126,6 +132,12 @@
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]){
+            [self.tableview.mj_header endRefreshing];
+            
+            return ;
+        }
+
         // 第一进来,直接赋值.
         self.hotComment = [LGZHotComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         self.recentComment = [LGZHotComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
