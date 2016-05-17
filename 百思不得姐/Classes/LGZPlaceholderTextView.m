@@ -24,7 +24,7 @@
         textViewLabel.numberOfLines = 0;
         textViewLabel.x = 4;
         textViewLabel.y = 7;
-        textViewLabel.width = [UIScreen mainScreen].bounds.size.width - 2 * textViewLabel.x;
+//        textViewLabel.width = [UIScreen mainScreen].bounds.size.width - 2 * textViewLabel.x;
         [self addSubview:textViewLabel];
         _textViewLabel = textViewLabel;
         
@@ -79,7 +79,7 @@
     _placeholder = [placeholder copy];
     self.textViewLabel.text = self.placeholder;
     [self textDidChange];
-    [self setLabelHeight];
+    [self setNeedsLayout];
 }
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor
@@ -98,21 +98,21 @@
 {
     [super setText:text];
     [self textDidChange];
-    [self setLabelHeight];
+    [self setNeedsLayout];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
     [super setAttributedText:attributedText];
     [self textDidChange];
-    [self setLabelHeight];
+    [self setNeedsLayout];
 }
 
-- (void)setLabelHeight
+- (void)layoutSubviews
 {
-    CGSize maxSize = CGSizeMake(self.textViewLabel.width, CGFLOAT_MAX);
-    CGFloat labelHeight = [self.placeholder boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.font} context:nil].size.height;
-    self.textViewLabel.height = labelHeight;
+    [super layoutSubviews];
+    self.textViewLabel.width = self.width - 2 * self.textViewLabel.x;
+    [self.textViewLabel sizeToFit];
 }
 
 @end

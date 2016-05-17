@@ -41,7 +41,7 @@
         params[@"a"] = @"square";
         params[@"c"] = @"topic";
         
-        
+//            self.height = 800;
         [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -49,6 +49,7 @@
             
             if (self.squares.count){
                 [self creatFooterview];
+               
             }
             
             
@@ -88,6 +89,7 @@
     [self setNeedsDisplay];
 
 }
+
 
 - (void)click:(LGZSquareButton *)button{
     

@@ -23,13 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 设置不自动设置上边距
     self.webView.autoresizingMask = NO;
+    // 设置上边距为64
     self.webView.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    
     _progressProxy = [[NJKWebViewProgress alloc] init];
     self.webView.delegate = _progressProxy;
     _progressProxy.webViewProxyDelegate = self;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     [self.webView loadRequest:request];
+    
+    // 设置两个按钮为不能点击状态
     self.goForwardButton.enabled = NO;
     self.goBackButton.enabled = NO;
     

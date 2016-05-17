@@ -37,17 +37,18 @@ static NSString * const meId = @"meCell";
     // 调整tableview的显示问题
     self.tableView.sectionHeaderHeight = 0;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 900, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 840, 0);
     
     [self.tableView registerClass:[LGZMeCell class] forCellReuseIdentifier:meId];
     
     // 设置tableview的footerView
     LGZFooterView *view = [[LGZFooterView alloc] init];
     self.tableView.tableFooterView = view;
-        
-    
+
 //    self.tableView.tableFooterView.height = ;
 }
+
+
 
 
 
