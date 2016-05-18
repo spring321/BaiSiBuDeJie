@@ -21,5 +21,6 @@
 @property (nonatomic, assign) CGFloat centerX;
 @property (nonatomic, assign) CGFloat centerY;
 
++ (instancetype)loadViewFromXib;
 
 @end

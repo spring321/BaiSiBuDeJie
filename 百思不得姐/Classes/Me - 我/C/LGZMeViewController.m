@@ -11,6 +11,8 @@
 #import "LGZFooterView.h"
 
 @interface LGZMeViewController ()
+/** footerViewHeight */
+@property (nonatomic, assign) CGFloat footerHeight;
 
 @end
 
@@ -37,7 +39,7 @@ static NSString * const meId = @"meCell";
     // 调整tableview的显示问题
     self.tableView.sectionHeaderHeight = 0;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 840, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 830, 0);
     
     [self.tableView registerClass:[LGZMeCell class] forCellReuseIdentifier:meId];
     
@@ -48,7 +50,11 @@ static NSString * const meId = @"meCell";
 //    self.tableView.tableFooterView.height = ;
 }
 
-
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    // 这里能得到最终的footerView的高度,但是如何设置呢?
+}
 
 
 

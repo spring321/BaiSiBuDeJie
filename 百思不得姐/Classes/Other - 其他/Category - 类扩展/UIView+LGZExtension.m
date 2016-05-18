@@ -96,4 +96,9 @@
     return self.frame.size.width;
 }
 
+// 加载xib文件
++ (instancetype)loadViewFromXib
+{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];}
+
 @end

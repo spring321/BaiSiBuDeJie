@@ -72,6 +72,11 @@
 		18F8B08D1CEAF05200D67638 /* LGZWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B08B1CEAF05200D67638 /* LGZWebViewController.xib */; };
 		18F8B0941CEB04CA00D67638 /* LGZPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0931CEB04CA00D67638 /* LGZPostViewController.m */; };
 		18F8B0971CEB2CC700D67638 /* LGZPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0961CEB2CC700D67638 /* LGZPlaceholderTextView.m */; };
+		18F8B09A1CEC099900D67638 /* LGZAddTagToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0991CEC099900D67638 /* LGZAddTagToolbar.m */; };
+		18F8B09C1CEC09A800D67638 /* LGZAddTagToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8B09B1CEC09A800D67638 /* LGZAddTagToolbar.xib */; };
+		18F8B09F1CEC1FDF00D67638 /* LGZAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B09E1CEC1FDF00D67638 /* LGZAddTagViewController.m */; };
+		18F8B0A21CEC4CD300D67638 /* LGZTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0A11CEC4CD300D67638 /* LGZTagButton.m */; };
+		18F8B0A51CEC63D100D67638 /* LGZTagTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8B0A41CEC63D100D67638 /* LGZTagTextFieldView.m */; };
 		4C13CD5BB77E6DA2D3BE47BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3659CA91252E244842556A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +215,15 @@
 		18F8B0931CEB04CA00D67638 /* LGZPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZPostViewController.m; sourceTree = "<group>"; };
 		18F8B0951CEB2CC700D67638 /* LGZPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZPlaceholderTextView.h; sourceTree = "<group>"; };
 		18F8B0961CEB2CC700D67638 /* LGZPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZPlaceholderTextView.m; sourceTree = "<group>"; };
+		18F8B0981CEC099900D67638 /* LGZAddTagToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZAddTagToolbar.h; sourceTree = "<group>"; };
+		18F8B0991CEC099900D67638 /* LGZAddTagToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZAddTagToolbar.m; sourceTree = "<group>"; };
+		18F8B09B1CEC09A800D67638 /* LGZAddTagToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGZAddTagToolbar.xib; sourceTree = "<group>"; };
+		18F8B09D1CEC1FDF00D67638 /* LGZAddTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZAddTagViewController.h; sourceTree = "<group>"; };
+		18F8B09E1CEC1FDF00D67638 /* LGZAddTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZAddTagViewController.m; sourceTree = "<group>"; };
+		18F8B0A01CEC4CD300D67638 /* LGZTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTagButton.h; sourceTree = "<group>"; };
+		18F8B0A11CEC4CD300D67638 /* LGZTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTagButton.m; sourceTree = "<group>"; };
+		18F8B0A31CEC63D100D67638 /* LGZTagTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGZTagTextFieldView.h; sourceTree = "<group>"; };
+		18F8B0A41CEC63D100D67638 /* LGZTagTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGZTagTextFieldView.m; sourceTree = "<group>"; };
 		8079380D8504ADC0D092D806 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3659CA91252E244842556A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -590,6 +604,13 @@
 			children = (
 				18F8B0951CEB2CC700D67638 /* LGZPlaceholderTextView.h */,
 				18F8B0961CEB2CC700D67638 /* LGZPlaceholderTextView.m */,
+				18F8B0981CEC099900D67638 /* LGZAddTagToolbar.h */,
+				18F8B0991CEC099900D67638 /* LGZAddTagToolbar.m */,
+				18F8B09B1CEC09A800D67638 /* LGZAddTagToolbar.xib */,
+				18F8B0A01CEC4CD300D67638 /* LGZTagButton.h */,
+				18F8B0A11CEC4CD300D67638 /* LGZTagButton.m */,
+				18F8B0A31CEC63D100D67638 /* LGZTagTextFieldView.h */,
+				18F8B0A41CEC63D100D67638 /* LGZTagTextFieldView.m */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -602,6 +623,8 @@
 				18F8B0551CE4189900D67638 /* LGZPublishViewController.xib */,
 				18F8B0921CEB04CA00D67638 /* LGZPostViewController.h */,
 				18F8B0931CEB04CA00D67638 /* LGZPostViewController.m */,
+				18F8B09D1CEC1FDF00D67638 /* LGZAddTagViewController.h */,
+				18F8B09E1CEC1FDF00D67638 /* LGZAddTagViewController.m */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -747,6 +770,7 @@
 				18F8B06C1CE5C05700D67638 /* LGZCommentViewController.xib in Resources */,
 				1894C3D91CD9849C00641572 /* LGZFriendTrendsViewController.xib in Resources */,
 				18F8B0611CE56ABC00D67638 /* LGZTopicVideoView.xib in Resources */,
+				18F8B09C1CEC09A800D67638 /* LGZAddTagToolbar.xib in Resources */,
 				18F8B08D1CEAF05200D67638 /* LGZWebViewController.xib in Resources */,
 				18F8B0711CE6CCAD00D67638 /* LGZCommentCell.xib in Resources */,
 				18F8B04D1CE2FB2000D67638 /* LGZTopicPictureView.xib in Resources */,
@@ -836,6 +860,7 @@
 				1894C3E31CD9A5D900641572 /* LGZFocusCategory.m in Sources */,
 				18F8B04B1CE2FB1100D67638 /* LGZTopicPictureView.m in Sources */,
 				18F8B0971CEB2CC700D67638 /* LGZPlaceholderTextView.m in Sources */,
+				18F8B0A21CEC4CD300D67638 /* LGZTagButton.m in Sources */,
 				18F8B08C1CEAF05200D67638 /* LGZWebViewController.m in Sources */,
 				1894C3D11CD8E54C00641572 /* UIBarButtonItem+LGZExtension.m in Sources */,
 				1894C3CC1CD8E54C00641572 /* LGZFriendTrendsViewController.m in Sources */,
@@ -846,7 +871,9 @@
 				18F8B0261CDB894800D67638 /* LGZWhitePlaceholderFiled.m in Sources */,
 				181ED7AB1CDA0A7400D44CF0 /* LGZUserModel.m in Sources */,
 				1894C3D41CD8E54C00641572 /* LGZTabBar.m in Sources */,
+				18F8B09F1CEC1FDF00D67638 /* LGZAddTagViewController.m in Sources */,
 				18F8B0481CE1C7CD00D67638 /* LGZBaseTopicsViewController.m in Sources */,
+				18F8B0A51CEC63D100D67638 /* LGZTagTextFieldView.m in Sources */,
 				1894C3CD1CD8E54C00641572 /* LGZMeViewController.m in Sources */,
 				18F8B05F1CE56AA900D67638 /* LGZTopicVideoView.m in Sources */,
 				1894C3D71CD8F23900641572 /* LGZNavgationController.m in Sources */,
@@ -854,6 +881,7 @@
 				18F8B0941CEB04CA00D67638 /* LGZPostViewController.m in Sources */,
 				18F8B0451CE16AC600D67638 /* NSDate+LGZExtension.m in Sources */,
 				1894C3CB1CD8E54C00641572 /* LGZEssenceViewController.m in Sources */,
+				18F8B09A1CEC099900D67638 /* LGZAddTagToolbar.m in Sources */,
 				18F8B0671CE5A11D00D67638 /* LGZUser.m in Sources */,
 				18F8B0561CE4189900D67638 /* LGZPublishViewController.m in Sources */,
 				18F8B03D1CDF68C800D67638 /* LGZTopics.m in Sources */,

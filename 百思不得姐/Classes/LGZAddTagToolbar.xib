@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LGZAddTagToolbar">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="159"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvp-7g-UxY" userLabel="下面的view">
+                    <rect key="frame" x="0.0" y="115" width="338" height="44"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar-light" translatesAutoresizingMaskIntoConstraints="NO" id="9Ym-5L-Jap">
+                            <rect key="frame" x="0.0" y="0.0" width="338" height="44"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-xu-iVs">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="pRa-5v-M2H"/>
+                                <constraint firstAttribute="width" constant="44" id="wFz-tP-EtM"/>
+                            </constraints>
+                            <state key="normal" image="post-@N"/>
+                            <state key="highlighted" image="post-@"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="pRa-5v-M2H"/>
+                                </mask>
+                            </variation>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ5-3L-IPJ">
+                            <rect key="frame" x="44" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="R9K-H5-dsW"/>
+                                <constraint firstAttribute="height" constant="44" id="gW3-OE-Nn2"/>
+                            </constraints>
+                            <state key="normal" image="post-#N"/>
+                            <state key="highlighted" image="post-#"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="gW3-OE-Nn2"/>
+                                </mask>
+                            </variation>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wH4-xu-iVs" firstAttribute="leading" secondItem="uvp-7g-UxY" secondAttribute="leading" id="2nK-fK-ROQ"/>
+                        <constraint firstItem="9Ym-5L-Jap" firstAttribute="top" secondItem="uvp-7g-UxY" secondAttribute="top" id="Y02-Hs-FzM"/>
+                        <constraint firstItem="QQ5-3L-IPJ" firstAttribute="top" secondItem="uvp-7g-UxY" secondAttribute="top" id="aGc-eT-3Wc"/>
+                        <constraint firstAttribute="height" constant="44" id="aa9-zh-CKf"/>
+                        <constraint firstAttribute="bottom" secondItem="9Ym-5L-Jap" secondAttribute="bottom" id="bgA-CF-1b0"/>
+                        <constraint firstItem="wH4-xu-iVs" firstAttribute="top" secondItem="uvp-7g-UxY" secondAttribute="top" id="cIu-c9-yAt"/>
+                        <constraint firstAttribute="bottom" secondItem="wH4-xu-iVs" secondAttribute="bottom" id="dfS-kn-MGQ"/>
+                        <constraint firstItem="QQ5-3L-IPJ" firstAttribute="leading" secondItem="wH4-xu-iVs" secondAttribute="trailing" id="gxa-dv-aMy"/>
+                        <constraint firstItem="9Ym-5L-Jap" firstAttribute="leading" secondItem="uvp-7g-UxY" secondAttribute="leading" id="jXa-0f-dRJ"/>
+                        <constraint firstAttribute="bottom" secondItem="QQ5-3L-IPJ" secondAttribute="bottom" id="l0y-DT-lcF"/>
+                        <constraint firstAttribute="trailing" secondItem="9Ym-5L-Jap" secondAttribute="trailing" id="naV-12-fRH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEv-a8-cmB" userLabel="上面的view">
+                    <rect key="frame" x="5" y="0.0" width="328" height="115"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uvp-7g-UxY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8ce-hy-HUi"/>
+                <constraint firstAttribute="trailing" secondItem="uvp-7g-UxY" secondAttribute="trailing" id="FhF-vy-MyX"/>
+                <constraint firstItem="iEv-a8-cmB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="YGA-XE-KxI"/>
+                <constraint firstItem="iEv-a8-cmB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aEm-C0-fze"/>
+                <constraint firstAttribute="bottom" secondItem="uvp-7g-UxY" secondAttribute="bottom" id="guE-za-UNx"/>
+                <constraint firstAttribute="trailing" secondItem="iEv-a8-cmB" secondAttribute="trailing" constant="5" id="inK-2f-wbb"/>
+                <constraint firstItem="uvp-7g-UxY" firstAttribute="top" secondItem="iEv-a8-cmB" secondAttribute="bottom" id="yfz-3s-mFV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tooView" destination="iEv-a8-cmB" id="wb7-T1-3Eb"/>
+            </connections>
+            <point key="canvasLocation" x="449" y="209.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="post-#" width="19" height="19"/>
+        <image name="post-#N" width="19" height="19"/>
+        <image name="post-@" width="19" height="19"/>
+        <image name="post-@N" width="19" height="19"/>
+        <image name="tabbar-light" width="320" height="49"/>
+    </resources>
+</document>

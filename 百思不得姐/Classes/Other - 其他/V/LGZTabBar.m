@@ -20,7 +20,7 @@
 {
     if(self = [super initWithFrame:frame]){
         UIButton *publishButton = [[UIButton alloc] init];
-        [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
+        [publishButton setBackgroundImage:[UIImage imageNamed:@"tabbar-light-1"] forState:UIControlStateNormal];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];
         [publishButton addTarget:self action:@selector(publishView) forControlEvents:UIControlEventTouchUpInside];
         
