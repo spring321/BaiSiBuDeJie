@@ -47,6 +47,7 @@
     
     self.addButton = addButton;
     
+    [self creatTagLabels:@[@"糗事", @"吐槽"]];
     
     [self.tooView addSubview:addButton];
     
@@ -144,6 +145,19 @@
         self.addButton.y = CGRectGetMaxY(lastTagLabel.frame) + 5;
     }
     
+    [self setNeedsLayout];
+    
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    CGFloat oldHeight = self.height;
+    
+    self.height = CGRectGetMaxY(self.addButton.frame) + 44 + 5;
+    
+    self.y += (oldHeight - self.height);
+
 }
 
 
