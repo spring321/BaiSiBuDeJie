@@ -44,6 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // 由于自定义leftItem,导致右划失效,所以清空导航控制器代理,让导航控制器可以右划.
+    self.interactivePopGestureRecognizer.delegate = nil;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
