@@ -95,11 +95,10 @@ static NSString * const ID = @"topicCell";
     params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
-    
     [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
     
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                self.topics = [LGZTopics mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        self.topics = [LGZTopics mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         self.maxtime = responseObject[@"info"][@"maxtime"];
         [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
@@ -150,6 +149,8 @@ static NSString * const ID = @"topicCell";
     
     
     LGZTopicsCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    
     cell.topic = self.topics[indexPath.row];
     
         

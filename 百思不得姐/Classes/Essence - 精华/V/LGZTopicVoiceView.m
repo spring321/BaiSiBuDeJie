@@ -10,17 +10,31 @@
 #import "LGZTopics.h"
 #import <UIImageView+WebCache.h>
 #import "LGZShowPictureController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface LGZTopicVoiceView()
 @property (strong, nonatomic) IBOutlet UIImageView *backGroundImageView;
 @property (strong, nonatomic) IBOutlet UILabel *topRightLabel;
 @property (strong, nonatomic) IBOutlet UILabel *bottomRightLabel;
+/** 播放器 */
+@property (nonatomic, strong) AVPlayer *player;
+
+/** 字典 */
+@property (nonatomic, strong) NSMutableDictionary *dicts;
+
 
 @end
 
 
 @implementation LGZTopicVoiceView
 
+- (NSMutableDictionary *)dicts
+{
+    if(!_dicts){
+        _dicts = [NSMutableDictionary dictionary];
+    }
+    return _dicts;
+}
 
 + (instancetype)topicVoiceView
 {
@@ -57,6 +71,32 @@
     self.bottomRightLabel.text = [NSString stringWithFormat:@"%zd播放",self.topic.playfcount];
     
     
+}
+- (IBAction)playVoice:(id)sender {
+
+    [self.player play];
+    
+}
+
+-(AVPlayer *)player
+{
+    if(!_player)
+    {
+        [_player pause];
+        _player = nil;
+        NSURL *url= [NSURL URLWithString:self.topic.voiceuri];
+        // 创建播放器
+        AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
+        
+        _player = [AVPlayer playerWithPlayerItem:item];
+    }
+    return _player;
+}
+
+- (void)reset
+{
+    [self.player pause];
+    self.player = nil;
 }
 
 @end

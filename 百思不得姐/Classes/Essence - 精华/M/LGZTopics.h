@@ -50,6 +50,15 @@
 /** 声音时长 */
 @property (nonatomic, assign) NSInteger voicetime;
 
+/** 声音的地址url */
+@property (nonatomic, copy) NSString *voiceuri;
+
+
+/** 视频的地址url */
+@property (nonatomic, copy) NSString *videouri;
+
+
+
 /** 视频时长 */
 @property (nonatomic, assign) NSInteger videotime;
 
@@ -68,5 +77,6 @@
 
 /** 声音时长计算后 */
 @property (nonatomic, assign) NSString *voiceTimeStr;
+
 
 @end

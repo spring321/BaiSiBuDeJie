@@ -14,4 +14,6 @@
 @property (nonatomic, strong) LGZTopics *topic;
 
 + (instancetype)topicVideoView;
+
+- (void)reset;
 @end

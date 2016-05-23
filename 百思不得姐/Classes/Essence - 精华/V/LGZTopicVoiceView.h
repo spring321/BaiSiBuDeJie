@@ -17,4 +17,6 @@
 
 + (instancetype)topicVoiceView;
 
+
+- (void)reset;
 @end

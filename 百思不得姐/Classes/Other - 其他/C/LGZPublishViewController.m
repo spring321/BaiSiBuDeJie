@@ -10,6 +10,7 @@
 #import "LGZOtherLoginButton.h"
 #import <POP.h>
 #import "LGZPostViewController.h"
+#import "LGZUser.h"
 
 #import "LGZNavgationController.h"
 

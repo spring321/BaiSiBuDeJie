@@ -10,16 +10,64 @@
 #import <UIImageView+WebCache.h>
 #import "LGZTopics.h"
 #import "LGZShowPictureController.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 @interface LGZTopicVideoView()
 @property (strong, nonatomic) IBOutlet UIImageView *backGroundImageView;
 @property (strong, nonatomic) IBOutlet UILabel *leftLabel;
 @property (strong, nonatomic) IBOutlet UILabel *rightLabel;
 
+/** 播放器 */
+@property (nonatomic, strong) AVPlayer *player;
+/** 播放器 */
+@property (nonatomic, strong) MPMoviePlayerController *playController;
+
+/** 字典 */
+@property (nonatomic, strong) NSMutableDictionary *dicts;
 @end
 
 
 @implementation LGZTopicVideoView
 
+
+-(NSMutableDictionary *)dicts
+{
+    if(!_dicts){
+        _dicts = [NSMutableDictionary dictionary];
+    }
+    return _dicts;
+}
+
+- (MPMoviePlayerController *)playController
+{
+    if(!_playController){
+        
+        NSURL *rul = [NSURL URLWithString:self.topic.videouri];
+        _playController = [[MPMoviePlayerController alloc] initWithContentURL:rul];
+        _playController.view.frame = self.bounds;
+        [self addSubview:_playController.view];
+        
+//        [self.dicts setObject:_playController forKey:self.topic.videouri];
+    }
+    return _playController;
+}
+
+- (AVPlayer *)player
+{
+    if(!_player)
+    {
+        
+        NSURL *url = [NSURL URLWithString:self.topic.videouri];
+        AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
+        _player = [AVPlayer playerWithPlayerItem:item];
+        
+        // 添加layer
+        AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:_player];
+        layer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width , self.topic.imageHeight);
+        [self.backGroundImageView.layer addSublayer:layer];
+    }
+    return _player;
+}
 
 + (instancetype)topicVideoView
 {
@@ -55,6 +103,20 @@
     self.leftLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",minute,second];
     self.rightLabel.text = [NSString stringWithFormat:@"%zd播放",self.topic.playfcount];
 
+}
+- (IBAction)playVideo:(id)sender {
+    
+    
+    
+    [self.playController play];
+}
+
+- (void)reset
+{
+    [self.playController.view removeFromSuperview];
+    [self.playController pause];
+    self.playController = nil;
+    
 }
 
 

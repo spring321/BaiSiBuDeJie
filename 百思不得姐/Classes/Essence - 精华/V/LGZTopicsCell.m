@@ -45,6 +45,13 @@
 
 @implementation LGZTopicsCell
 
+- (void)prepareForReuse {
+    
+    [super prepareForReuse];
+    [_voiceView reset];
+    [_videoView reset];
+}
+
 + (instancetype)cell
 {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
@@ -151,7 +158,7 @@
     }else if (topic.type == 41)
     {
         self.videoView.hidden = NO;
-        self.videoView.frame = CGRectMake(10,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        self.videoView.frame = CGRectMake(10,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10 , [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
         self.videoView.topic = topic;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
