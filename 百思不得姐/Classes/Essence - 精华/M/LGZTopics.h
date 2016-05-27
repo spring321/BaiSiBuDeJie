@@ -72,11 +72,16 @@
 /** 图片的高度 */
 @property (nonatomic, assign) CGFloat imageHeight;
 
+/** 文字的高度 */
+@property (nonatomic, assign) CGFloat textH;
+
+
 /** 是否为处理过的图片 */
 @property (nonatomic, assign, getter=isBigView) BOOL bigView;
 
 /** 声音时长计算后 */
 @property (nonatomic, assign) NSString *voiceTimeStr;
+
 
 
 @end

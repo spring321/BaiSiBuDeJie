@@ -45,6 +45,8 @@
 
 @implementation LGZTopicsCell
 
+
+// cell循环利用调用此方法
 - (void)prepareForReuse {
     
     [super prepareForReuse];
@@ -151,7 +153,8 @@
         self.voiceView.hidden = YES;
     }else if (topic.type == 31){
         self.voiceView.hidden = NO;
-        self.voiceView.frame = CGRectMake(10,self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10, [UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
+        //self.topic.cellHeight - self.topic.imageHeight - 44 - 10 - 10,
+        self.voiceView.frame = CGRectMake(10, self.topic.textH + 44 +10+10,[UIScreen mainScreen].bounds.size.width - 20, self.topic.imageHeight);
         self.voiceView.topic = topic;
         self.pictureView.hidden = YES;
         self.videoView.hidden = YES;

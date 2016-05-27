@@ -55,6 +55,7 @@
         
         // 计算文字的高度
         CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+        self.textH = textH;
         
         // 计算热评的高度
         LGZHotComment *comt = [self.top_cmt firstObject];

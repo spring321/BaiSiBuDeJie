@@ -76,6 +76,7 @@
 - (void)addTagClick
 {
     LGZTagButton *button = [LGZTagButton buttonWithType:UIButtonTypeCustom];
+    
     [button addTarget:self action:@selector(tagButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"chose_tag_close_icon"] forState:UIControlStateNormal];
     [button setTitle:self.textFiled.text forState:UIControlStateNormal];
